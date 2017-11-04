@@ -1,0 +1,103 @@
+/**
+ * Availability calendar functionality
+ */
+
+
+.o-panel--availability {
+
+}
+
+
+	.c-availability {
+		@include rempx(padding-bottom, $mangui-vertical-rhythm);
+	}
+
+
+		.c-availability__heading {
+			text-align: center;
+			@include rempx(padding-bottom, $mangui-vertical-rhythm);
+		}
+
+
+		.c-availability__list {
+			margin: 0 auto;
+			padding: 0;
+			width: 100%;
+			display: block;
+			text-align: center;
+
+
+			@include mangui-breakpoint("max-width: 860px") { @include rempx(width, 450px); }
+			@include mangui-breakpoint("max-width: 520px") { @include rempx(width, 270px); }
+			@include mangui-breakpoint("max-width: 400px") { @include rempx(width, 200px); }
+		}
+
+
+			.c-availability__item {
+				color: #FFF;
+				opacity: 0.5;
+				cursor: help;
+				position: relative;
+				text-align: center;
+				border-radius: 3px;
+				display: inline-block;
+				background: $grey--lighter;
+				border: 4px solid transparent;
+				@include rempx(width, 60px);
+				@include rempx(line-height, 50px);
+				@include rempx(margin, 3px 2px 4px);
+				@include mangui-transition(ease-in-out 350ms all);
+
+
+				&:hover {
+					opacity: 1;
+
+
+					.c-availability__overlay {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+
+
+			.c-availability__item--full 	{ background: $red; }
+			.c-availability__item--limited 	{ background: $orange; }
+			.c-availability__item--empty 	{ background: $green; }
+			.c-availability__item--current 	{ border-color: rgba(0,0,0,0.4); }
+
+
+				.c-availability__overlay {
+					opacity: 0;
+					border-radius: 3px;
+					position: absolute;
+					visibility: hidden;
+					pointer-events: none;
+					background: $grey--darker;
+					-webkit-backface-visibility: hidden;
+					@include rempx(width, 185px);
+					@include rempx(bottom, 71px);
+					@include rempx(font-size, 14px);
+					@include rempx(padding, 7px 20px);
+					@include rempx(line-height, 18px);
+					@include rempx(margin, -42px 0 0 -107px);
+					@include mangui-transition(ease-in-out 350ms all);
+					@include mangui-breakpoint("max-width: 380px") {
+						@include rempx(width, 140px);
+						@include rempx(margin-left, -80px);
+					}
+
+
+					&::after {
+						left: 50%;
+						content: '';
+						position: absolute;
+						background: $grey--darker;
+						-webkit-backface-visibility: hidden;
+						@include rempx(width, 10px);
+						@include rempx(height, 10px);
+						@include rempx(bottom, -5px);
+						@include rempx(margin-left, -5px);
+						@include mangui-transform(rotate(45deg));
+					}
+				}

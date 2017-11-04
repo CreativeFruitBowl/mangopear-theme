@@ -1,0 +1,92 @@
+/**
+ * Contact panel in the footer
+ */
+
+.o-panel--testimonial {
+	background: $blue--light;
+
+
+
+
+
+		/**
+		 * Icon
+		 */
+		
+
+		.o-blog__icon--testimonial {
+			color: $blue--light;
+
+
+			svg {
+				@include rempx(width, 72px);
+				@include rempx(margin-top, 15px);
+			}
+		}
+
+
+
+
+
+		/**
+		 * Date
+		 */
+		
+
+		.o-date__time {
+		    border: 3px solid $blue--darker;
+		}
+
+
+			.o-date__day,
+			.o-date__month,
+			.o-date__year {
+			    color: $blue--darker;
+			}
+}
+
+
+
+
+
+		/**
+		 * Blockquote styling
+		 */
+
+
+		.o-testimonial {
+			font-weight: 300;
+			font-style: italic;
+			color: #FFF;
+			@include rempx(font-size, 20px);
+
+
+			@include mangui-breakpoint(portable) {
+				@include rempx(margin-left, 20px);
+				@include rempx(margin-right, 20px);
+			}
+
+
+			p {
+				&:before {
+					@include rempx(padding-right, 4px);
+				}
+
+
+				&:last-child {
+					color: #FFF;
+				}
+			}
+
+
+			footer {
+				font-weight: 400;
+				color: $blue--darker;
+				@include rempx(margin-top, 20px);
+
+
+				.c-blockquote__name {
+					font-weight: bold;
+				}
+			}
+		}

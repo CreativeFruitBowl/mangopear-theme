@@ -1,0 +1,41 @@
+/**
+ * Visit website component
+ */
+
+.c-visit-website {
+	position: relative; // For the icons to position correctly
+	text-align: center;
+    border: 1px solid #EEE;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.03);
+	background: url(../../images/portfolio/aside-pod--visit-website.jpg) top center no-repeat #FFF;
+	@include rempx(max-width, 368px);
+	@include rempx(padding-top, 250px);
+	@include rempx(margin, 40px auto 24px);
+}
+
+
+	.c-visit-website__icon {
+		top: 0;
+		left: 50%;
+		position: absolute;
+		border-radius: 60px;
+		background-color: #FFF;
+		border: 1px solid $grey--light;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+		@include rempx(width, 80px);
+		@include rempx(height, 80px);
+		@include rempx(line-height, 80px);
+		@include rempx(padding-top, 16px);
+		@include rempx(margin, -44px 0 0 -40px);
+	}
+
+
+	.c-visit-website__content {
+		margin-bottom: 1em;
+		@include rempx(padding, 0 20px);
+	}
+
+
+	.c-visit-website__button {
+		@include rempx(margin-bottom, 24px);
+	}

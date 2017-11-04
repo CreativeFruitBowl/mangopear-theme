@@ -1,0 +1,71 @@
+/**
+ * Search bar component
+ */
+
+
+.searchwp-live-search-results.searchwp-live-search-results {
+	height: 0;
+	opacity: 0;
+	z-index: 9999;
+	display: none;
+	border-top: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 48px !important;
+	background-color: #FFF;
+	border-radius: 0 0 3px 3px;
+	max-height: calc(100% - 86px);
+	border: 1px solid $grey--lighter;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+	@include rempx(padding, 0 20px 20px);
+	@include rempx(margin-top, 15px);
+	@include mangui-transition(ease-in-out 500ms all);
+
+
+	@include mangui-breakpoint("max-width: 650px") {
+		top: 104px !important;
+	}
+
+
+	@include mangui-breakpoint("min-width: 650px") {
+		position: fixed;
+	}
+
+
+	&.searchwp-live-search-results-showing {
+		opacity: 1;
+		height: auto;
+		overflow: auto;
+		display: block;
+	}
+
+
+	.searchwp-live-search-no-results {
+		padding: 1em 0;
+		text-align: center;
+	}
+}
+
+
+
+
+
+	/**
+	 * Results
+	 */
+	
+	.o-nav--search-results.o-nav--search-results {
+		margin-top: 0;
+
+
+		.o-nav__item {
+			@include rempx(margin-left, -20px);
+			@include rempx(margin-right, -20px);
+		}
+
+
+			.o-nav__link {
+				@include rempx(padding-left, 20px);
+				@include rempx(padding-right, 20px);
+			}
+	}

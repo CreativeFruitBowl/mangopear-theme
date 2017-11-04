@@ -1,0 +1,71 @@
+/**
+ * Blog panel modifier: Aside
+ */
+
+.o-panel--aside {
+	background: tint($blue--lighter, 50%);
+
+
+
+
+
+		/**
+		 * Icon
+		 */
+		
+
+		.o-blog__icon--aside {
+			color: tint($blue--lighter, 50%);
+		}
+
+
+
+
+
+		/**
+		 * Date
+		 */
+		
+
+		.o-date__time {
+		    border: 3px solid $blue--medium;
+		}
+
+
+			.o-date__day,
+			.o-date__month,
+			.o-date__year {
+			    color: $blue--medium;
+			}
+}
+
+
+
+
+
+		/**
+		 * Blockquote styling
+		 */
+
+
+		.c-post__content {
+			color: $blue--light;
+		}
+
+
+
+
+
+		/**
+		 * Link styling
+		 */
+		
+		.c-post__button,
+		.c-post__title-link {
+			color: $blue--medium;
+
+
+			&:hover {
+				color: $blue--darker;
+			}
+		}

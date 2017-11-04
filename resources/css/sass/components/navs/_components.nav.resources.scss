@@ -1,0 +1,73 @@
+/**
+ * Resources sidebar
+ */
+
+.c-resources__aside {
+
+}
+
+
+	.c-resources__aside-inner {
+		@include mangui-breakpoint(desk) {
+			border-left: $pod-style--border;
+			@include rempx(padding-left, 24px);
+		}
+	}
+
+
+		.o-nav--collections {
+			@include rempx(margin-top, 35px);
+
+			
+			.o-nav__title {
+				overflow: hidden; // styling only
+				position: relative;
+				font-style: italic;
+				color: $grey--medium;
+				font-family: $font-core;
+				text-transform: uppercase;
+				@include rempx(font-size, 12px);
+				@include rempx(margin, 25px 0 10px);
+
+
+				.o-nav__title-overflow {
+					position: relative;
+
+
+					&::after {
+					    left: 100%;
+					    content: '';
+					    position: absolute;
+					    border-top: 1px solid $grey--lighter;
+					    @include rempx(width, 1000px);
+					    @include rempx(margin-top, 8px);
+					    @include rempx(margin-left, 20px);
+					}
+				}
+			}
+
+
+			.o-nav__list {
+				
+			}
+
+
+				.o-nav__item {
+				    margin-left: -15px;
+				}
+
+
+					.o-nav__link {
+					    font-weight: bold;
+					    padding: 9px 15px 9px;
+					    border-left: 2px solid transparent;
+						@include mangui-font-campton($font-size: 16px);
+						@include mangui-transition(ease-in-out 350ms all);
+
+
+						&:hover {
+						    background: #F5F5F5;
+							border-left-color: $blue--light;
+						}
+					}
+		}

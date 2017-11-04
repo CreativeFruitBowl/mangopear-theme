@@ -1,0 +1,146 @@
+/**
+ * Contact panel in the footer
+ */
+
+.o-panel--blog {
+	background: $grey--lighter;
+}
+
+
+
+
+
+	/**
+	 * Wrappers
+	 */
+	
+
+	.o-blog__wrapper--icon {
+		@include mangui-breakpoint(portable) {
+			text-align: center;
+			@include rempx(padding, 40px 0 50px);
+		}
+	}
+
+
+
+
+
+		/**
+		 * Icon
+		 */
+		
+
+		.o-blog__icon {
+			z-index: 5;
+			overflow: hidden;
+			text-align: center;
+			position: relative;
+			font-style: normal;
+			color: $grey--light;
+			border-radius: 50px;
+			display: inline-block;
+			background-color: #FFF;
+			font-family: $font-campton;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+			@include rempx(width, 100px);
+			@include rempx(height, 100px);
+
+
+			@include mangui-breakpoint(portable) {
+				@include rempx(margin-left, -128px);
+			}
+		}
+
+
+
+
+
+		/**
+		 * Date
+		 */
+		
+
+		.o-date__time {
+		    border: 3px solid $grey--medium;
+		    display: inline-block;
+		    position: absolute;
+		    text-align: center;
+			@include rempx(width, 170px);
+			@include rempx(height, 170px);
+			@include rempx(padding-left, 2px);
+			@include rempx(border-radius, 100px);
+			@include rempx(margin, -35px 0 0 -30px);
+
+
+			&.o-date__time--daily {
+				.o-date__day {
+					@include rempx(padding-top, 45px);
+				}
+
+
+				.o-date__month {
+					@include rempx(margin-top, -19px);
+				}
+			}
+
+
+			&.o-date__time--monthly {
+				.o-date__month {
+					@include rempx(padding-top, 50px);
+				}
+
+
+				.o-date__year {
+					@include rempx(margin-top, -19px);
+				}
+			}
+		}
+
+
+			.o-date__day {
+			    color: $grey--medium;
+			    display: block;
+				font-family: $font-campton;
+				@include rempx(font-size, 50px);
+			}
+
+
+			.o-date__month {
+			    color: $grey--medium;
+			    display: block;
+			    font-weight: bold;
+			    text-transform: uppercase;
+				@include rempx(font-size, 14px);
+			}
+
+
+			.o-date__year {
+			    display: block;
+			    font-weight: bolder;
+			    color: $grey--medium;
+			    letter-spacing: -0.04em;
+				font-family: $font-campton;
+				@include rempx(font-size, 40px);
+			}
+
+
+
+
+
+		/**
+		 * Post title
+		 */
+		
+		.c-post__title {
+			margin-top: 1em;
+		}
+
+
+		/**
+		 * Post button
+		 */
+		
+		.c-post__button {
+			margin-bottom: 1em;
+		}

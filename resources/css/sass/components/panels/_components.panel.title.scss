@@ -1,0 +1,123 @@
+/**
+ * Title panel
+ */
+
+.o-panel--title {
+	position: relative;
+	background: $blue--light;
+	box-shadow: inset 0 -3px 8px rgba(0,0,0,0.15);
+	@include rempx(padding-top, 105px);
+	@include rempx(padding-bottom, 41px);
+	@include mangui-breakpoint(palm) { @include rempx(padding-top, 162px); }
+
+
+	.c-page-title {
+		margin: 0;
+		color: #FFF;
+		line-height: 1.2;
+		position: relative;
+		@include rempx(font-size, 36px);
+	
+
+		@include mangui-breakpoint(palm) {
+		    line-height: 1.1;
+			@include rempx(font-size, 28px);
+			@include rempx(margin-bottom, 25px);
+		}
+	}
+
+
+
+
+
+	/**
+	 * Breadcrumbs
+	 */
+	
+
+	.c-breadcrumbs {
+		color: #DDD;
+		font-style: italic;
+		@include rempx(margin, 12px 0 0);
+
+
+		.o-nav__list {
+
+		}
+
+			.o-nav__item {
+				position: relative;
+				padding-right: 2em;
+
+
+				&:not(.o-nav__item--no-link) {
+					&::after {
+						color: #CCC;
+						content: '\002022';
+						position: absolute;
+						@include rempx(top, 1px);
+						@include rempx(right, 13px);
+					}
+
+
+					a {
+						color: #FFF;
+						border-bottom: 1px solid transparent;
+						@include rempx(padding-bottom, 5px);
+						@include mangui-transition(ease-in-out 350ms all);
+
+
+						&:hover {
+							border-bottom-color: currentColor;
+						}
+					}
+				}
+
+
+				&.o-nav__item--no-link {
+					font-weight: bold;
+				}
+
+
+				&.o-nav__item--categories {
+					a {
+						padding: 0;
+						color: $blue--lighter;
+
+
+						&:hover {
+							color: #FFF;
+						}
+					}
+				}
+
+			}
+
+
+				.o-nav__link {
+					padding: 0;
+					color: $grey--medium;
+
+
+					&:hover {
+						color: $blue--light;
+					}
+				}
+	}
+
+
+
+
+
+	/**
+	 * Seperator for title and page content
+	 */
+	
+	.c-page-title__seperator {
+		opacity: .3;
+		background: $blue--light;
+		@include rempx(height, 6px);
+		@include rempx(width, 100px);
+		@include rempx(margin, 50px 0 -33px);
+	}
+}

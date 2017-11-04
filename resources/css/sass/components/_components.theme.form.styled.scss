@@ -1,0 +1,81 @@
+/**
+ * Styled forms for general in page use
+ */
+
+.o-form--styled {
+	fieldset {
+		background: $pod-style--background;
+		border: $pod-style--border;
+		box-shadow: $pod-style--box-shadow;
+		@include rempx(padding, 40px);
+
+
+		@include mangui-breakpoint(portable) {
+			@include rempx(margin-left, -20px);
+			@include rempx(margin-right, -20px);
+			@include rempx(padding-left, 20px);
+			@include rempx(padding-right, 20px);
+		}
+	}
+
+
+		h3 {
+			@include rempx(margin-top, -9px);
+		}
+
+
+		.o-form__field {
+			&.frm_blank_field {
+				select,
+				textarea,
+				input[type="tel"],
+				input[type="url"],
+				input[type="text"],
+				input[type="file"],
+				input[type="email"],
+				input[type="search"],
+				input[type="number"],
+				input[type="password"] {
+					border-color: $red;
+				}
+			}
+		}
+
+
+			.o-form__label {
+				@extend %u-hide;
+			}
+
+
+			.o-form__input {
+				width: 100%;
+			}
+
+
+				select,
+				textarea,
+				input[type="tel"],
+				input[type="url"],
+				input[type="text"],
+				input[type="file"],
+				input[type="email"],
+				input[type="search"],
+				input[type="number"],
+				input[type="password"] {
+					color: $grey--dark;
+					border-color: #E0E0E0;
+				}
+
+
+				.o-form__message {
+					font-style: italic;
+				}
+
+
+
+
+
+		.o-form__submit {
+			margin-left: 0;
+		}
+}

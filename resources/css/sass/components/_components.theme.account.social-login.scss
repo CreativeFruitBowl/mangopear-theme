@@ -1,0 +1,74 @@
+/**
+ * 
+ */
+
+.o-button--social {
+	background-color: $blue--light;
+	@include rempx(margin-bottom, 3px);
+
+
+	&:hover {
+		background-color: mangui-shade($blue--light, 10%);
+	}
+
+
+	.o-button__icon {
+		float: left;
+		display: inline-block;
+	}
+
+
+	.o-button__icon--right {
+		@include rempx(margin-top, 5px);
+	}
+
+
+	.o-button__text {
+		@include rempx(padding-left, 10px);
+		@include rempx(line-height, 30px);
+	}
+}
+
+
+
+
+
+/**
+ * Log in form in the header of the website
+ */
+
+.c-header__login-form {
+	@include rempx(padding, 0 40px);
+
+
+	.o-form__field--text,
+	.o-form__field--password {
+		.o-form__input {
+			width: 100%;
+		}
+	}
+
+
+	.o-form__field--single-checkbox {
+		padding-top: 0;
+		@include rempx(margin-top, -5px);
+	}
+
+
+	h2 {
+		@include rempx(margin-top, 10px);
+	}
+
+
+	.c-header-login__quick-wrapper {
+		background-color: $grey--lighter;
+		border-top: 1px solid $grey--light;
+		@include rempx(padding, 0 40px 20px);
+		@include rempx(margin, 25px -40px -25px);
+	}
+
+
+	.o-button--social {
+		width: 100%;
+	}
+}

@@ -1,0 +1,266 @@
+/**
+ * Posts
+ */
+
+
+/**
+ * Global object
+ */
+
+.o-posts {
+
+}
+
+
+	.o-posts__list:not(.o-grid) {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+
+		.o-posts__item {
+			padding-bottom: 0;
+
+
+			&.has-overlay-link {
+				.o-post {
+					position: relative;
+				}
+			}
+		}
+
+
+				.o-post__overlay-link {
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					position: absolute;
+				}
+
+
+
+
+
+/**
+ * Resource posts
+ */
+
+.o-post--resource {
+
+}
+
+
+
+
+
+/**
+ * Resource link posts
+ */
+
+.c-resource__links-title {
+	position: relative;
+	@include rempx(margin-top, 40px);
+	@include mangui-breakpoint(desk) { margin-top: 0; }
+	@include rempx(margin-bottom, 15px);
+	@include rempx(padding-bottom, 22px);
+
+
+	&::after {
+		left: 0;
+		bottom: 0;
+		width: 50px;
+		height: 4px;
+		content: '';
+		opacity: 0.3;
+		position: absolute;
+		background: currentColor;
+	}
+}
+
+
+.c-resources__links {
+	.o-posts__list {
+
+	}
+
+
+		.o-posts__item {
+			padding: 0;
+
+
+			&.has-overlay-link {
+				position: relative;
+			}
+
+
+			&:hover {
+				.o-post__title-link {
+					color: $blue--darker;
+				}
+
+
+				.o-post__from,
+				.o-post__read-time {
+					color: $grey--dark;
+				}
+			}
+		}
+
+
+			.o-post {
+				border-bottom: 1px solid $grey--lighter;
+				@include rempx(padding-top, 12px);
+				@include rempx(padding-bottom, 15px);
+			}
+
+
+				.o-post__title {
+					margin: 0;
+					padding: 0;
+					@include rempx(font-size, 18px);
+					@include rempx(margin-top, 5px);
+					@include rempx(margin-bottom, 10px);
+				}
+
+
+					.o-post__title-link {
+						display: block;
+					}
+
+
+				.o-post__from {
+					@include rempx(font-size, 12px);
+					@include mangui-transition(ease-in-out 350ms all);
+				}
+
+
+				.o-post__read-time {
+					float: right;
+					display: inline-block;
+					@include rempx(font-size, 12px);
+					@include rempx(padding-top, 4px);
+					@include mangui-transition(ease-in-out 350ms all);
+				}
+
+
+	.o-button {
+		@include rempx(margin-top, 20px);
+	}
+}
+
+
+
+
+
+/**
+ * Large posts
+ */
+
+.o-post--large {
+	border-bottom: 1px solid $grey--lighter;
+	@include rempx(margin-bottom, 20px);
+
+
+	.o-post__image {
+		position: relative;
+
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0,0,0,0);
+			@include mangui-transition(ease-in-out 350ms all);
+		}
+	}
+}
+
+
+
+
+
+/**
+ * Medium posts
+ */
+
+.o-post--medium {
+	border-bottom: $pod-style--border;
+	@include rempx(padding-top, 12px);
+	@include rempx(margin-bottom, 15px);
+
+
+	.o-post__image {
+		position: relative;
+
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0,0,0,0);
+			@include mangui-transition(ease-in-out 350ms all);
+		}
+	}
+
+
+	.o-post__title {
+		padding: 0;
+		line-height: 1.3;
+		@include rempx(font-size, 18px);
+		@include rempx(margin, 30px 0 20px);
+	}
+
+
+		.o-post__title-link {
+			display: block;
+		}
+
+
+	.o-post__from {
+		@include rempx(font-size, 12px);
+	}
+
+
+	.o-post__read-time {
+		float: right;
+		display: inline-block;
+		@include rempx(font-size, 12px);
+		@include rempx(padding-top, 4px);
+	}
+}
+
+
+
+
+
+/**
+ * Style the overlay links for medium and large posts
+ */
+
+.o-posts__item {
+	&.has-overlay-link{
+		&:hover {
+			.o-post--large,
+			.o-post--medium {
+				.o-post__image {
+					&::before {
+						background: rgba(0,0,0,0.3);
+					}
+				}
+
+
+				.o-post__title-link {
+					color: $blue--darker;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+html {
+	color: $colour--text;
+	background-color: #FBFBFB;
+	font-family: $font-core;
+	line-height: 1.9;
+}
+
+
+	body {
+		@include rempx(font-size, 15px);
+	}
+
+
+	p {
+		margin: 1.75em 0;
+	}
+
+
+	ul,
+	ol,
+	dd {
+		padding-left: 0;
+		margin-left: 1.2em;
+	}
+
+
+		li {
+			padding-left: 1em;
+			padding-bottom: 1.75em;
+		}

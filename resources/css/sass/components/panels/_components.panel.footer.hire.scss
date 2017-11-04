@@ -1,0 +1,54 @@
+/**
+ * Contact panel in the footer
+ */
+
+.o-panel--hire-me {
+	background: $blue--darker;
+}
+
+
+	.c-hire-me__content {
+		padding-top: 1em;
+		padding-bottom: 1em;
+
+
+		@include mangui-breakpoint(portable) {
+			text-align: center;
+			@include rempx(padding-left, 24px);
+		}
+	}
+
+
+		.c-hire-me__heading {
+			margin: 0;
+			color: #FFF;
+		}
+
+
+		.c-hire-me__text {
+			color: $blue--lighter;
+			@include rempx(margin, 20px 0 0);
+			@include rempx(max-width, 500px);
+
+
+			@include mangui-breakpoint(portable) { max-width: 100%; }
+		}
+
+
+	.c-hire-me__call-to-action {	
+		@include mangui-breakpoint(portable) {
+			text-align: center;
+			@include rempx(padding-top, 24px);
+			@include rempx(padding-left, 24px);
+
+
+			.c-hire-me__button {
+				float: none;
+			}
+		}
+	}
+
+
+		.c-hire-me__button {
+			float: right;
+		}

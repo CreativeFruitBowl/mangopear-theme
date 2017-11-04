@@ -1,0 +1,10 @@
+@mixin mangui-font-campton($font-size, $upper: false) {
+	line-height: 1.5;
+	letter-spacing: -0.01em;
+	font-family: $font-campton;
+	@include rempx(font-size, $font-size);
+
+	@if ($upper == true) {
+		text-transform: uppercase;
+	}
+}

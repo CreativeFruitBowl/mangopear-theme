@@ -1,0 +1,176 @@
+/**
+ * [Component] Home page template
+ *
+ * @category	Component
+ * @package		mangopear
+ * @author		Andi North <andi@mangopear.co.uk>
+ * @copyright	2017 Mangopear creative
+ * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+ * @since   	2.0.0
+ * @version   	2.0.0
+ */
+
+
+/**
+ * CONTENTS
+ *
+ * [1]	Intro panel > Wrapper
+ * [2]	Intro panel > hello_world() statement
+ * [3]	Intro panel > Description
+ * [4]	Intro panel > Actions
+ */
+
+
+/**
+ * [1]	Intro panel > Wrapper
+ */
+
+.c-home {
+	width: 100%;
+	text-align: center;
+	background: #263238;
+	border: solid #11191C;
+	border-width: 3px 20px;
+
+	@include rempx(padding, 200px 25px);
+	@include mangui-breakpoint("max-height: 900px") { @include rempx(padding, 125px 25px); }
+	@include mangui-breakpoint("max-width: 649px")  { @include rempx(padding, 175px 25px 125px); }
+	@include mangui-breakpoint("max-width: 500px")  { @include rempx(padding, 175px 25px 100px); }
+	@include mangui-breakpoint("max-width: 370px")  { @include rempx(padding, 155px 25px 45px); }
+
+	@include mangui-breakpoint("max-width: 500px") {
+		border-left: 0;
+		border-right: 0;
+	}
+}
+
+
+
+
+
+	/**
+	 * [2]	Intro panel > hello_world() statement
+	 */
+	
+	.c-home__title {
+		margin: 0 0 1.65em;
+		font-weight: normal;
+		@include rempx(font-size, 38px);
+		@include mangui-breakpoint("max-width: 500px") { @include rempx(font-size, 32px); }
+		@include mangui-breakpoint("max-width: 370px") { @include rempx(font-size, 26px); }
+	}
+
+
+		.c-home__char {
+			&--green { color: #10b675; }
+			&--blue  { color: #87a4d6; }
+			&--white { color: #cdd3dd; }
+		}
+
+
+
+
+
+	/**
+	 * [3]	Intro panel > Description
+	 */
+	
+	.c-home__description {
+		margin: 0 auto;
+		color: $grey--light;
+		@include rempx(font-size, 18px);
+		@include rempx(max-width, 550px);
+		@include mangui-breakpoint("max-width: 500px") { @include rempx(font-size, 16px); }
+		@include mangui-breakpoint("max-width: 370px") { @include rempx(font-size, 14px); }
+	}
+
+
+
+
+
+	/**
+	 * [4]	Intro panel > Actions
+	 */
+	
+	.c-home__actions {
+		margin: 5em 0 0;
+		@include mangui-breakpoint("max-width: 370px") { margin: 3em 0 0; }
+	}
+
+
+		.c-home__action {
+			@include mangui-breakpoint("max-width: 649px") {
+				@include rempx(margin-left, 5px);
+				@include rempx(margin-right, 5px);
+			}
+
+			@include mangui-breakpoint("max-width: 370px") { @include mangui-transform(scale(0.85)); }
+		}
+
+
+		.o-button--circular {
+			color: #9cf5d2;
+			overflow: hidden;
+			position: relative;
+			border: 2px solid #10b675;
+			@include rempx(font-size, 18px);
+			@include rempx(border-radius, 40px);
+			@include rempx(padding, 8px 36px 7px);
+			@include mangui-transition(ease-in-out 450ms all);
+
+
+			&::before {
+				opacity: 0;
+				left: -100%;
+				width: 100%;
+				content: '';
+				position: absolute;
+				background: #04e68e;
+				@include rempx(top, -5px);
+				@include rempx(height, 60px);
+				@include rempx(border-radius, 40px);
+				@include mangui-transform(scale(.75));
+				@include mangui-transition(ease-in-out 450ms all);
+			}
+
+
+			.o-button__text {
+				z-index: 100;
+				position: relative;
+				display: inline-block;
+			}
+
+
+			.o-button__icon {
+				z-index: 101;
+				position: relative;
+				display: inline-block;
+				@include rempx(margin, 1px 0 -6px 15px);
+			}
+
+
+			&:hover,
+			&:active,
+			&:focus {
+				&::before {
+					opacity: .3;
+					@include mangui-transform(scale(1) translateX(100%));
+				}
+			}
+
+
+			&:hover  { color: #FFF; }
+			&:active { color: #FFF; border-color: $grey--light; }
+			&:focus  { color: #FFF; border-color: #FFF; }
+		}
+
+
+		.c-home__actions-divider {
+			color: $grey--light;
+			vertical-align: top;
+			display: inline-block;
+			text-transform: uppercase;
+			@include rempx(padding, 0 15px);
+			@include rempx(line-height, 55px);
+			@include mangui-breakpoint("max-width: 649px") { display: none; }
+		}

@@ -1,0 +1,193 @@
+/**
+ * Core changes to the header across all portfolios
+ */
+
+.o-body--portfolio .c-main-header {
+	box-shadow: none;
+	background: rgba(0,0,0,0.3);
+	border-bottom-color: rgba(255,255,255,.35);
+
+
+	@include mangui-breakpoint("max-width: 650px") {
+		.c-main-header__cell--center { background: rgba(0,0,0,0.3); }
+	}
+}
+
+
+	/**
+	 * Header
+	 */
+	
+	.o-header--portfolio {
+		overflow: hidden;
+		position: relative;
+		text-align: center;
+		@include rempx(padding-top, 148px);
+	}
+
+
+	/**
+	 * Background gradients
+	 */
+	
+	.c-portfolio-header__gradient {
+		top: 50%;
+		left: 50%;
+		z-index: 1;
+		position: absolute;
+		@include rempx(width, 1000px);
+		@include rempx(height, 1000px);
+		@include mangui-transform(translateY(-50%) translateX(-50%));
+	}
+
+
+	/**
+	 * Content wrapper
+	 */
+	
+	.c-portfolio-header__content {
+		z-index: 2;
+		position: relative;
+		@include rempx(padding, 55px 0 82px);
+	}
+
+
+	/**
+	 * Titles
+	 */
+	
+	.c-portfolio-header__title,
+	.c-portfolio-header__title--sub,
+	.c-portfolio-header__descriptor {
+		color: #FFF;
+	}
+
+
+	.c-portfolio-header__title {
+		margin: 0;
+		line-height: 1.2;
+		font-weight: 600;
+		@include rempx(font-size, 60px);
+		@include rempx(max-width, 960px);
+		@include rempx(margin, 7px auto 0);
+
+
+		@include mangui-breakpoint(palm) {
+			@include rempx(font-size, 44px);
+			@include rempx(padding, 0 20px);
+		}
+	}
+
+	
+	.c-portfolio-header__title--sub {
+		top: 0;
+		left: 50%;
+		width: 100%;
+		opacity: .75;
+		margin: 0 auto;
+		position: absolute;
+		letter-spacing: .35em;
+		text-transform: uppercase;
+		border-bottom: 1px solid rgba(255,255,255,.5);
+		@include rempx(padding, 0 0 25px);
+		@include rempx(font-size, 14px);
+		@include rempx(max-width, 550px);
+		@include mangui-transform(translateX(-50%));
+		@include mangui-breakpoint(palm) { @include rempx(font-size, 11px); }
+	}
+
+
+	.c-portfolio-header__descriptor {
+		font-weight: 300;
+		font-style: italic;
+		margin: 60px auto 0;
+		font-family: $font-core;
+		@include rempx(font-size, 20px);
+		@include rempx(max-width, 575px);
+
+
+		@include mangui-breakpoint(palm) {
+			line-height: 1.75;
+			@include rempx(font-size, 15px);
+			@include rempx(padding, 0 20px);
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * Footer: Contact
+	 */
+	
+	.c-portfolio-form {
+		background: rgba(0,0,0,0.025);
+		border-top: 5px solid rgba(0,0,0,.05);
+		@include rempx(margin-top, -5px);
+		@include rempx(padding, 60px 20px 40px);
+
+
+		.o-form__message--description {
+			line-height: 1.4;
+			@include rempx(font-size, 12px);
+			@include rempx(padding, 7px 20px 10px);
+			@include mangui-breakpoint(palm) { @include rempx(padding, 7px 0 10px); }
+		}
+
+
+			.c-contact-details,
+			.c-contact-details__title .c-contact-details__title-overflow::after {
+				border-top-color: #E5E5E5;
+				border-left-color: #E5E5E5;
+			}
+
+
+			.o-form__input {
+				input[type="tel"],
+				input[type="text"],
+				input[type="email"],
+				textarea,
+				select {
+					border-color: #CCC;
+				}
+			}
+	}
+
+
+		.c-portfolio-form__content {
+			text-align: center;
+			@include rempx(padding, 20px 0);
+
+
+			.c-lede {
+				margin-bottom: 0;
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * Articles
+	 */
+	
+	.c-portfolio-article--banded {
+		background: #F5F5F5;
+		border-top: 3px solid #EEE;
+		border-bottom: 3px solid #EEE;
+		@include rempx(padding, 60px 20px 40px);
+	}

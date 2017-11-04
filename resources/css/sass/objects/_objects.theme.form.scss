@@ -1,0 +1,150 @@
+/**
+ * Form styles
+ */
+
+
+.o-form {
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+	.o-form__field {
+		@include rempx(padding, 5px 0);
+	}
+
+
+		.o-form__label {
+			width: 25%;
+			display: inline-block;
+			vertical-align: top;
+			@include rempx(padding, 11px 20px 10px 0);
+			@include mangui-breakpoint(palm) { width: 100%; }
+
+
+			.frm_required {
+				color: $red;
+			}
+		}
+
+
+		.o-form__input {
+			width: 70%;
+			margin-left: 5%;
+			display: inline-block;
+
+
+			@include mangui-breakpoint(palm) {
+				width: 100%;
+				margin-left: 0;
+			}
+
+
+			select,
+			textarea,
+			input[type="tel"],
+			input[type="url"],
+			input[type="text"],
+			input[type="file"],
+			input[type="email"],
+			input[type="search"],
+			input[type="number"],
+			input[type="password"] {
+				margin: 0;
+				width: 100%;
+				background: #FFF;
+				border: 1px solid #EEE;
+				box-shadow: inset 0 1px 2px rgba(0,0,0,0); // Set to transparent for smoother transitions
+				@include rempx(min-height, 45px);
+				@include rempx(padding, 0 20px);
+				@include mangui-transition(ease-in-out 350ms border-color, ease-in-out 350ms box-shadow);
+
+
+				&:hover {
+					border-color: $blue--medium;
+				}
+
+
+				&:active,
+				&:focus {
+					outline: 0;
+					border-color: $blue--medium;
+					box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+				}
+			}
+
+
+			textarea {
+				@include rempx(height, 150px);
+				@include rempx(padding-top, 10px);
+				@include rempx(padding-bottom, 10px);
+			}
+		}
+
+
+		.o-form__message {
+
+		}
+
+
+			.o-form__message--error {
+				color: $red;
+				@include rempx(padding, 5px 20px 10px);
+				@include mangui-breakpoint(palm) { padding-left: 0; }
+			}
+
+			.frm_error_style {
+				color: #FFF;
+				background: $red;
+				text-align: center;
+				border-radius: 3px;
+				@include rempx(padding, 10px 20px);
+				@include rempx(margin-bottom, 20px);
+			}
+
+
+
+	.o-form__submit {
+		margin-left: 30%;
+		@include mangui-breakpoint(palm) { margin-left: 0; }
+	}
+
+
+
+
+
+	/**
+	 * Additional form styling
+	 */
+	
+	.o-form__label {
+		width: 100%;
+		font-weight: bold;
+	}
+
+
+	.o-form__input {
+		margin: 0;
+	}
+
+
+	.o-form__field--single-checkbox {
+		text-align: left;
+
+
+		.o-form__input {
+			width: auto;
+			display: inline-block;
+			@include rempx(padding-top, 13px);
+			@include rempx(padding-right, 10px);
+		}
+
+
+		.o-form__label {
+			width: auto;
+			display: inline-block;
+		}
+	}

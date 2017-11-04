@@ -1,0 +1,277 @@
+/**
+ * Main navigation
+ */
+
+.c-main-header__toggle {
+	@include mangui-breakpoint("max-width: 650px") {
+		float: left;
+		@include rempx(margin-left, 15px);
+	}
+}
+
+
+	.c-nav-toggle__label {
+		color: #FFF;
+		cursor: pointer;
+		position: relative;
+		text-align: center;
+		border-radius: 2px;
+		display: inline-block;
+		box-shadow: 0 2px 4px rgba(0,0,0,0);
+		@include rempx(width, 48px);
+		@include rempx(height, 48px);
+		@include rempx(margin-top, 6px);
+		@include rempx(padding, 7px 0 0);
+		@include mangui-transition(ease-in-out 350ms all);
+
+
+		&:hover {
+			background: #FFF;
+			color: $blue--medium;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+		}
+
+
+			.o-icon--navigation {
+				position: relative;
+				display: inline-block;
+				@include rempx(margin, 15px 0 0);
+			}
+
+
+			.o-icon--account-navigation {
+				@include mangui-transition(ease-in-out 0 all);
+			}
+
+
+			.c-navigation-icon__bar--one,
+			.c-navigation-icon__bar--two,
+			.c-navigation-icon__bar--three {
+				display: block;
+				background: currentColor;
+				@include rempx(width, 22px);
+				@include rempx(height, 2px);
+				@include mangui-transition(ease-in-out 350ms transform);
+			}
+
+
+			.c-navigation-icon__bar--one {
+				position: relative;
+				@include rempx(top, -5px);
+				@include mangui-transform-origin(top left);
+			}
+
+			.c-navigation-icon__bar--three {
+				position: relative;
+				@include rempx(bottom, -5px);
+				@include mangui-transform-origin(bottom left);
+			}
+	}
+
+
+	.c-nav-toggle__background {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		z-index: 95000; // Bring above pretty much all else
+		position: fixed;
+		pointer-events: none;
+		background-color: #000;
+		@include mangui-transition(ease-in-out 350ms opacity);
+	}
+
+
+	.o-nav--main {
+		opacity: 0;
+		z-index: 95001; // Bring above nav background
+		overflow: auto;
+		position: fixed;
+		background: #FFF;
+		visibility: hidden;
+		pointer-events: none;
+		box-shadow: 0 3px 14px #000;
+		border: 1px solid $grey--light;
+		max-height: calc(100% - 105px);
+		@include rempx(top, 70px);
+		@include rempx(left, 20px);
+		@include rempx(width, 350px);
+		@include rempx(padding, 24px 0);
+		@include mangui-transform(scale(0));
+		@include mangui-transform-origin(top left);
+		@include mangui-transition(ease-in-out 350ms all);
+
+
+		@include mangui-breakpoint(palm) {
+			left: 0;
+			right: 0;
+			width: 100%;
+		}
+
+
+		&::before {
+			content: '';
+			background: #FFF;
+			position: absolute;
+			border-top: 1px solid $grey--light;
+			border-left: 1px solid $grey--light;
+			@include rempx(top, -11px);
+			@include rempx(left, 21px);
+			@include rempx(width, 20px);
+			@include rempx(height, 20px);
+			@include mangui-transform(rotate(45deg));
+		}
+
+
+		&.o-nav--account {
+			left: auto;
+			@include rempx(right, 20px);
+			@include mangui-transform-origin(top right);
+			@include mangui-breakpoint(palm) { right: 0; }
+
+
+			&::before {
+				left: auto;
+				@include rempx(right, 21px);
+			}
+		}
+
+
+		.o-nav__list {
+
+		}
+
+
+			.o-nav__divider {
+				border: 0;
+				height: auto;
+				position: relative;
+				text-transform: uppercase;
+				@include rempx(font-size, 12px);
+				@include rempx(margin, 18px 0 4px);
+				@include rempx(padding, 3px 0 0 20px);
+
+
+				&::before {
+					right: 0;
+					content: '';
+					position: absolute;
+					border-top: 1px solid $grey--lighter;
+					@include rempx(top, 12px);
+					@include rempx(left, 110px);
+				}
+			}
+
+
+			.o-nav__item {
+				opacity: 0;
+				@include mangui-transition(ease-in-out 350ms all);
+			}
+
+
+				.o-nav__link {
+					font-weight: bold;
+					color: $grey--medium;
+					border-left: 4px solid transparent;
+					@include rempx(padding, 10px 15px);
+					@include mangui-transition(ease-in-out 450ms all);
+
+
+					&:hover {
+						color: $blue--light;
+						background: #FAFAFA;
+						border-color: currentColor;
+						@include mangui-transition(ease-in-out 100ms all);
+					}
+				}
+
+
+					.o-nav__icon {
+						float: left;
+						color: currentColor;
+						@include rempx(margin-right, 25px);
+					}
+
+
+					.o-nav__label {
+						color: currentColor;
+						display: inline-block;
+						@include rempx(line-height, 36px);
+					}
+	}
+
+
+
+
+
+	/**
+	 * Toggle navigation
+	 */
+
+	.c-nav-toggle__input {
+		@extend %u-hide;
+
+
+		&:checked {
+			~ .c-nav-toggle__label {
+				z-index: 95002; // Bring above nav background
+				background: #FFF;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+
+
+				.c-navigation-icon__bar--one,
+				.c-navigation-icon__bar--two,
+				.c-navigation-icon__bar--three {
+					background-color: $blue--medium;
+				}
+
+
+				.o-icon--account-navigation {
+					color: $blue--medium;
+				}
+
+
+				.c-navigation-icon__bar--one {
+				//	@include rempx(top, 4px);
+					@include rempx(width, 20px);
+					@include mangui-transform(rotate(-40deg) translateX(-5px) translateY(5px) scaleX(.75));
+				}
+
+				.c-navigation-icon__bar--two {
+				}
+
+				.c-navigation-icon__bar--three {
+				//	@include rempx(bottom, 4px);
+					@include rempx(width, 20px);
+					@include mangui-transform(rotate(40deg) translateX(-6px) translateY(-5px) scaleX(0.75));
+				}
+			}
+
+
+			~ .o-nav--main {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+				@include mangui-transform(scale(1));
+
+
+				.o-nav__list > li {
+					opacity: 1;
+
+
+					@for $i from 1 through 20 {
+						&:nth-child(#{$i}) {
+							@include mangui-transition-delay(250ms + ($i * 75ms));
+						}
+					}
+				}
+			}
+
+
+			~ .c-nav-toggle__background {
+				opacity: 0.85;
+				pointer-events: all;
+			}
+		}
+	}

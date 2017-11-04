@@ -1,0 +1,17 @@
+/**
+ * Trump styles for images
+ */
+
+/**
+ * Portfolio images
+ */
+
+.o-image--gardbus--route-map {
+	@include rempx(margin-right, -50px);
+
+	@include mangui-breakpoint(palm) {
+		margin-right: 0;
+		@include rempx(margin-top, 10px);
+		@include rempx(margin-bottom, 30px);
+	}
+}

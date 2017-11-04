@@ -1,0 +1,126 @@
+/**
+ * Default modal styling
+ */
+
+.o-modal {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	z-index: 999999; // Bring above all else
+	visibility: visible;
+	pointer-events: auto;
+	@include mangui-transition(ease-in-out 500ms all);
+
+
+	&.is-hidden {
+		visibility: hidden;		// Stop the modal from being visible and clickable
+		pointer-events: none;	// Stop the modal from being visible and clickable
+
+
+		.o-modal__close,
+		.o-modal__background {
+			opacity: 0; 		// fade the background in and out
+		}
+
+		.o-modal__content {
+			opacity: 0; 							// fade the background in and out
+			@include mangui-transform(scale(0));	// scale the background in and out
+		}
+	}
+}
+
+
+	/**
+	 * Modal background
+	 */
+
+	.o-modal__background {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 1; // for animation purposes
+		z-index: 5000;
+		position: fixed;
+		background: rgba(0,0,0,0.8);
+		@include mangui-transition(ease-in-out 500ms all);
+	}
+
+
+	
+
+
+	/**
+	 * Close modal button
+	 */
+
+	.o-modal__close {
+		opacity: 1; // for animation purposes
+		z-index: 5001;
+		text-align: center;
+		position: relative;
+		@include mangui-transition(ease-in-out 500ms all);
+	}
+
+
+		.o-modal__close-button {
+			border: 0;
+			color: #FFF;
+			background: none;
+			@include rempx(margin, 12px 0 10px);
+
+
+			.o-button__icon {
+				float: left;
+				text-align: center;
+				border-radius: 50px;
+				display: inline-block;
+				border: 1px solid currentColor;
+				@include rempx(width, 36px);
+				@include rempx(height, 36px);
+				@include rempx(padding, 5px 0 0);
+			}
+
+
+			.o-button__text {
+				float: left;
+				display: inline-block;
+				@include rempx(line-height, 38px);
+				@include rempx(padding-left, 10px);
+			}
+
+
+			&:hover {
+				color: $blue--light;
+			}
+		}
+
+
+
+
+
+	/**
+	 * Modal content panel
+	 */
+
+	.o-modal__content {
+		opacity: 1; // for animation purposes
+		z-index: 5002;
+		overflow: auto;
+		background: #FFF;
+		position: absolute;
+		@include rempx(padding, 30px);
+		@include rempx(top, 60px);
+		@include rempx(left, 30px);
+		@include rempx(right, 30px);
+		@include rempx(bottom, 30px);
+		@include mangui-transform(scale(1));	// scale the background in and out
+		@include mangui-transition(ease-in-out 500ms all);
+	}
+
+
+		.o-modal__title {
+			text-align: center;
+		}

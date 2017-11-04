@@ -1,0 +1,165 @@
+/**
+ * Retainers component
+ */
+
+.c-retainers {
+
+}
+
+
+
+
+
+	/**
+	 * Retainers form
+	 */
+	
+	.c-retainers__form {
+		background: #FFF;
+		border: 1px solid $grey--lighter;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+		@include rempx(margin-bottom, 20px);
+		@include rempx(padding, 20px 40px);
+
+
+		@include mangui-breakpoint("max-width: 500px") {
+			@include rempx(margin, 0 -24px 20px);
+			@include rempx(padding, 10px 24px 20px);
+		}
+	}
+
+
+		.c-retainers__label {
+			float: left;
+			font-weight: bold;
+			font-style: italic;
+			display: inline-block;
+			@include rempx(line-height, 50px);
+			@include rempx(padding-right, 20px);
+
+
+			&.c-retainers__label--for {
+				@include rempx(padding, 0 0 0 20px);
+
+
+				@include mangui-breakpoint("max-width: 735px") {
+					clear: left;
+					padding-left: 0;
+					@include rempx(margin-top, 10px);
+				}
+			}
+		}
+
+
+		.c-retainers__select {
+			float: left;
+			border-radius: 0;
+			display: inline-block;
+			border: 1px solid $grey--lighter;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+			@include rempx(height, 50px);
+			@include rempx(margin, 0 10px);
+			@include rempx(padding, 0 20px);
+			@include mangui-transition(ease-in-out 350ms all);
+
+
+			&.c-retainers__select--for {
+				@include mangui-breakpoint("max-width: 735px") {
+					@include rempx(margin-top, 10px);
+				}
+			}
+
+
+			@include mangui-breakpoint("max-width: 570px") {
+				&:nth-of-type(1) {
+					clear: left;
+					margin-left: 0;
+				}
+			}
+
+
+			&:hover {
+				border-color: $blue--lighter;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.045);
+			}
+
+
+			&:focus,
+			&:hover,
+			&:active {
+				outline: 0;
+			}
+		}
+
+
+		.c-retainers__button {
+			float: left;
+			display: inline-block;
+			@include rempx(padding, 13px 30px);
+			@include rempx(margin, 0 0 0 20px);
+
+
+			@include mangui-breakpoint("max-width: 1010px") {
+				clear: left;
+				@include rempx(margin, 10px 0 0);
+			}
+		}
+
+
+
+
+
+	/**
+	 * List
+	 */
+
+	.c-retainers__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+
+		.c-retainers__item {
+			margin: 0;
+			padding: 1em 0;
+			border-top: 1px solid $grey--lighter;
+
+
+			&:first-child {
+				border-top: 0;
+			}
+		}
+
+
+			.c-retainers__title {
+				margin: 1em 0;
+				font-weight: normal;
+				@include rempx(font-size, 18px);
+			}
+
+
+			.c-retainers__date {
+
+			}
+
+
+			.c-retainers__duration {
+				margin: 0;
+				font-weight: bold;
+				text-align: right;
+				color: $blue--medium;
+				@include mangui-font-campton(18px);
+			}
+
+
+
+
+
+	/**
+	 * Retainers: Add form
+	 */
+	
+	.c-retainers__add {
+	    @include rempx(margin-top, 60px);
+	}

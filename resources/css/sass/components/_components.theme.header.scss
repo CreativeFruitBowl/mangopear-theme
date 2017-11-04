@@ -1,0 +1,280 @@
+/**
+ * Main header
+ */
+
+@include mangui-breakpoint(desk) {
+	body {
+		@include rempx(padding-top, 0); // Height of main navigation bar
+
+
+		&.admin-bar {
+			.c-main-header {
+				@include rempx(top, 32px); // Height of WordPress admin bar
+			}
+		}
+	}
+}
+
+
+	.c-main-header {
+		top: 0;
+		width: 100%;
+		z-index: 94999; // Just below the main nav
+		display: table;
+		position: relative;
+		background: $blue--medium;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		@include mangui-breakpoint(desk) { position: fixed; }
+
+
+		@include mangui-breakpoint(lap) {
+			@include rempx(padding-left, 10px);
+			@include rempx(padding-right, 10px);
+		}
+
+
+		@include mangui-breakpoint(desk) {
+			@include rempx(padding-left, 20px);
+			@include rempx(padding-right, 20px);
+		}
+
+
+		@include mangui-breakpoint("max-width: 650px") {
+			@include rempx(padding-bottom, 58px);
+			@include rempx(margin-bottom, -121px);
+		}
+
+
+		.c-main-header__button {
+			color: #FFF;
+			display: inline-block;
+			@include rempx(height, 62px);
+			@include rempx(padding, 13px 0 0);
+
+
+			&:hover {
+				color: $blue--dark;
+			}
+		}
+
+
+
+
+
+		@include mangui-breakpoint("min-width: 651px") {
+			.c-main-header__cell {
+					display: table-cell;
+					vertical-align: top;
+			}
+
+
+				.c-main-header__cell--left {
+					@include rempx(width, 222px);
+				}
+
+
+				.c-main-header__cell--center {
+					width: 100%;
+					text-align: center;
+				}
+
+
+				.c-main-header__cell--right {
+					@include rempx(width, 64px);
+				}
+		}
+
+
+
+		@include mangui-breakpoint("max-width: 650px") {
+			.c-main-header__cell--center {
+				left: 0;
+				right: 0;
+				position: absolute;
+				background-color: $blue--medium;
+				box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+				@include rempx(top, 61px);
+				@include rempx(height, 60px);
+				@include rempx(padding-left, 30px);
+				@include rempx(padding-right, 30px);
+				@include rempx(padding-bottom, 19px);
+
+
+				@include mangui-breakpoint(palm) {
+					@include rempx(padding-left, 20px);
+					@include rempx(padding-right, 20px);
+				}
+
+
+				.c-search__input {
+					width: 100%;
+					max-width: 100%;
+				}
+
+
+				.c-search__submit {
+					left: auto;
+					z-index: 2001;
+					position: absolute;
+					@include rempx(top, 21px);
+					@include rempx(right, 50px);
+					@include mangui-breakpoint(palm) { @include rempx(right, 40px); }
+				}
+			}
+
+
+			.c-main-header__cell--right {
+				float: right;
+				@include rempx(margin-right, 15px);
+			}
+
+
+			.c-main-header__button {
+				float: left;
+				overflow: hidden; // stop the overflow from being clickable.
+				@include rempx(width, 82px);
+
+
+				.c-logo__mangopear,
+				.c-logo__creative {
+					display: none;
+				}
+			}
+		}
+
+
+
+
+
+		/**
+		 * Navigation icon
+		 */
+		
+
+		.c-main-header__button--logo {
+			color: #FFF;
+			@include rempx(padding-top, 30px);
+			@include rempx(padding-bottom, 30px);
+		}
+
+
+
+
+
+		/**
+		 * Search form
+		 */
+		
+		.c-search__input {
+			border: 0;
+			outline: 0;
+			width: 85%;
+			color: #FFF;
+			border-radius: 2px;
+			background: rgba(255,255,255,.2);
+			box-shadow: 0 1px 4px rgba(0,0,0,0), 0 5px 10px rgba(0,0,0,0);
+			@include rempx(max-width, 550px);
+			@include rempx(height, 48px);
+			@include rempx(padding, 0 20px);
+			@include rempx(margin-top, 6px);
+			@include mangui-transition(none);
+			@include mangui-transition(ease-in-out 350ms all);
+			
+
+			@include mangui-placeholder() { 
+				color: rgba(255,255,255,.6);
+				@include mangui-transition(ease-in-out 350ms all); 
+			}
+
+
+			+ .c-search__submit { 
+				color: rgba(255,255,255,.6);
+				@include mangui-transition(ease-in-out 350ms all); 
+			}
+
+
+			&:hover {
+				background: rgba(255,255,255,.35);
+				box-shadow: 0 1px 4px rgba(0,0,0,0), 0 5px 10px rgba(0,0,0,0);
+				
+				@include mangui-placeholder() { color: #FFF; }
+				+ .c-search__submit { color: #FFF; }
+			}
+
+
+			&:focus,
+			&:active {
+				background: #FFF;
+				color: $grey--medium;
+				box-shadow: 0 1px 4px rgba(0,0,0,0), 0 5px 10px rgba(0,0,0,0.3);
+				
+				@include mangui-placeholder() { color: $blue--light; }
+				+ .c-search__submit { color: $blue--light; }
+			}
+
+
+		}
+
+
+			.c-search__submit {
+				position: relative;
+				color: $grey--medium;
+				@include rempx(top, 6px);
+				@include rempx(left, -46px);
+				@include mangui-transition(none);
+
+
+				&:hover {
+					color: $blue--light;
+				}
+			}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * Header introduction animation
+	 */
+	
+	.home {
+		.c-main-header {
+			&.has-transition {
+				@include mangui-transition(ease-in-out all 375ms);
+
+				.c-main-header__toggle 			{ @include mangui-transition(ease-in-out all 450ms 300ms); }	// Nav icon
+				.c-main-header__button 			{ @include mangui-transition(ease-in-out all 450ms 500ms); }	// Home button
+				.c-search__form 				{ @include mangui-transition(ease-in-out all 450ms 700ms); }	// Search bar
+				.c-main-header__toggle--account { @include mangui-transition(ease-in-out all 450ms 900ms); }	// Nav icon
+
+				@include mangui-breakpoint(palm) {
+					.c-search__form 				{ @include mangui-transition-delay(900ms); }	// Search bar
+					.c-main-header__toggle--account { @include mangui-transition-delay(700ms); }	// Nav icon				
+				}
+			}
+
+
+			&.has-animation {
+				@include mangui-transition(ease-in-out all 0ms);
+				@include mangui-transform(translateY(-100%));
+
+				.c-main-header__toggle 			{ @include mangui-transition(ease-in-out all 0ms); }	// Nav icon
+				.c-main-header__button 			{ @include mangui-transition(ease-in-out all 0ms); }	// Home button
+				.c-search__form 				{ @include mangui-transition(ease-in-out all 0ms); }	// Search bar
+				.c-main-header__toggle--account { @include mangui-transition(ease-in-out all 0ms); }	// Nav icon
+
+				.c-main-header__toggle 			{ @include mangui-transform(translateY(-100%)); }	// Nav icon
+				.c-main-header__button 			{ @include mangui-transform(translateY(-100%)); }	// Home button
+				.c-search__form 				{ @include mangui-transform(translateY(-200%)); }	// Search bar
+				.c-main-header__toggle--account { @include mangui-transform(translateY(-100%)); }	// Nav icon
+			}
+		}
+	}

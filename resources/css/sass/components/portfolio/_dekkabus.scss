@@ -1,0 +1,17 @@
+/**
+ * Portfolio header styles
+ */
+
+.o-header--portfolio--dekkabus {
+	background: $colour--brand-dekkabus;
+
+
+	.c-portfolio-header__gradient {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ee745d+0,bb3118+65 */
+		background: #bb3118; /* Old browsers */
+		background: -moz-radial-gradient(center, ellipse cover, #ee745d 0%, #bb3118 65%); /* FF3.6-15 */
+		background: -webkit-radial-gradient(center, ellipse cover, #ee745d 0%, #bb3118 65%); /* Chrome10-25,Safari5.1-6 */
+		background: radial-gradient(ellipse at center, #ee745d 0%, #bb3118 65%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee745d', endColorstr='#bb3118',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+}

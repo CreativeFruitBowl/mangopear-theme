@@ -1,0 +1,49 @@
+/**
+ * Blog panel modifier: Aside
+ */
+
+.o-panel--standard {
+
+
+		/**
+		 * Button styling
+		 */
+		
+		.c-post__title-link {
+			color: $blue--light;
+
+
+			&:hover {
+				color: $blue--darker;
+			}
+		}
+		
+
+
+
+
+		/**
+		 * Content styling
+		 */
+
+		.c-post__content {
+			color: $grey--medium;
+		}
+
+
+
+
+
+		/**
+		 * Button styling
+		 */
+		
+		.c-post__button {
+			color: $blue--light;
+
+
+			&:hover {
+				color: $blue--darker;
+			}
+		}
+}

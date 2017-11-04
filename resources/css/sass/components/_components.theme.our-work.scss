@@ -1,0 +1,126 @@
+/**
+ * Our work panels
+ */
+
+.c-work-slides {
+    position: relative;
+	@include rempx(margin-top, -21px);
+}
+
+
+	.c-work-slides__list {
+		margin: 0;
+		padding: 0;
+	}
+
+
+		.c-work-slides__item {
+			margin: 0;
+			padding: 0;
+		}
+
+
+			.c-work-slides__content {
+				@include rempx(padding-right, 50px);
+
+
+				@include mangui-breakpoint("max-width: 1300px) and (min-width: 1024px") {
+					@include rempx(padding-right, 30px);
+				}
+
+
+				&.c-work-slides__content--rev {
+					padding-right: 0;
+					@include rempx(padding-left, 50px);
+
+
+					@include mangui-breakpoint("max-width: 1300px) and (min-width: 1024px") {
+						padding-right: 0;
+						@include rempx(padding-left, 30px);
+					}
+				}
+
+
+				&.c-work-slides__content {
+					@include mangui-breakpoint(lap) {
+						@include rempx(padding, 0 50px 50px);					
+					}
+
+
+					@include mangui-breakpoint(palm) {
+						@include rempx(padding, 0 25px 50px);					
+					}
+				}
+
+
+
+
+
+				h1 {
+					color: #FFF;
+					margin-top: 0;
+					@include rempx(font-size, 44px);
+
+
+					@include mangui-breakpoint("max-width: 1300px) and (min-width: 1024px") {
+						margin-bottom: 0;
+						@include rempx(font-size, 34px);
+					}
+
+
+					+ h2 {
+						opacity: .5;
+					}
+				}
+
+
+				h2 {
+					color: #FFF;
+					@include rempx(font-size, 28px);
+
+
+					@include mangui-breakpoint("max-width: 1300px) and (min-width: 1024px") {
+						@include rempx(margin, 0 0 20px);
+						@include rempx(font-size, 22px);
+					}
+				}
+
+
+				p {
+					color: #FFF;
+					opacity: .5;
+					font-style: italic;
+					@include rempx(font-size, 17px);
+
+
+					@include mangui-breakpoint("max-width: 1300px) and (min-width: 1024px") {
+						margin: 1em 0;
+						line-height: 1.7;
+						@include rempx(font-size, 15px);
+					}
+
+
+					@include mangui-breakpoint(palm) {
+						line-height: 1.7;
+						@include rempx(font-size, 15px);					
+					}
+				}
+
+
+				.o-button--secondary {
+					color: #FFF;
+					font-weight: bold;
+					font-style: italic;
+					@include mangui-transition(ease-in-out 350ms all);
+
+
+					&:hover {
+						opacity: .5;
+					}
+
+
+					@include mangui-breakpoint("max-width: 1300px) and (min-width: 1024px") {
+						margin: 1em 0 0;
+					}
+				}
+			}

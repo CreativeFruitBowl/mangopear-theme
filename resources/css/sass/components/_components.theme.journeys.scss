@@ -1,0 +1,164 @@
+/**
+ * Journeys component - soon to be moved to the admin site
+ */
+
+.c-journeys {
+
+}
+
+
+
+
+
+	/**
+	 * Journey
+	 */
+
+	.c-journey {
+		display: block;
+		background: #FFF;
+		border: 1px solid #EEE;
+		@include rempx(margin-bottom, 3px);
+		@include rempx(padding, 23px 25px 15px);
+	
+
+		&:nth-child(2n) {
+			background: none;
+		}
+	}
+
+
+
+
+
+		.c-journey__icon {
+			z-index: 10;
+			background: #FFF;
+			position: relative;
+			text-align: center;
+			border-radius: 30px;
+			display: inline-block;
+			border: 1px solid #DDD;
+			box-shadow: 0 3px 6px rgba(0,0,0,0.075);
+			@include rempx(top, 5px);
+			@include rempx(width, 60px);
+			@include rempx(height, 60px);
+			@include rempx(padding, 12px 0 0);
+		}
+
+
+		.c-journey__route-number {
+			margin: 0;
+			background: #FFF;
+			text-align: center;
+			position: relative;
+			display: inline-block;
+			border: 1px solid #DDD;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+			@include rempx(top, -5px);
+			@include rempx(left, -20px);
+			@include rempx(width, 80px);
+			@include rempx(height, 80px);
+			@include rempx(font-size, 30px);
+			@include rempx(line-height, 80px);
+			@include rempx(padding-left, 4px);
+			@include rempx(border-radius, 40px);
+		}
+
+
+
+
+
+		.c-journey__depart,
+		.c-journey__arrive {
+			vertical-align: top;
+		}
+
+
+			.c-journey__time {
+				color: #E1E69F;
+				background: #333;
+				text-align: center;
+				border-radius: 3px;
+				vertical-align: top;
+				display: inline-block;
+				letter-spacing: .05em;
+				@include rempx(width, 72px);
+				@include rempx(font-size, 18px);
+				@include rempx(margin, 0 0 5px);
+				@include rempx(padding, 4px 10px 2px);
+			}
+
+
+			.c-journey__point {
+				padding: 0;
+				font-style: italic;
+				vertical-align: top;
+				display: inline-block;
+				width: calc(100% - 90px);
+				@include rempx(margin, 3px 0 0 10px);
+			}
+
+
+
+
+
+			/**
+			 * Connections
+			 */
+			
+			.c-journey--connection {
+				&.c-journey--connection {
+					padding-top: 0;
+					padding-bottom: 0;
+					border-color: #CCC;
+					background: #E0E0E0;
+					@include rempx(margin, -4px 30px 10px);
+				}
+
+
+				.c-journey__icon {
+					border: none;
+					background: none;
+					box-shadow: none;
+					display: inline-block;
+					@include rempx(height, 34px);
+					@include rempx(padding, 5px 0 0);
+					@include rempx(margin-bottom, 10px);
+				}
+
+
+				.c-journey__point {
+					@include rempx(line-height, 38px);
+				}
+			}
+
+
+
+
+
+			/**
+			 * Meals
+			 */
+
+			.c-journey--meal {
+				@include rempx(padding-top, 16px);
+				@include rempx(padding-bottom, 10px);
+			
+
+				.c-journey__icon {
+					top: 0;
+					margin: 0;
+					padding: 0;
+					border: none;
+					background: none;
+					box-shadow: none;
+					@include rempx(width, 36px);
+					@include rempx(height, 36px);
+				}
+
+
+				.c-journey__point {
+					margin: 0;
+				}
+			}

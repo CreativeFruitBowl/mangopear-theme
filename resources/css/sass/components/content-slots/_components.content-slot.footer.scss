@@ -1,0 +1,26 @@
+/**
+ * Footer content slots
+ */
+
+.o-content-slot--footer {
+	position: relative;
+	background: url(../../images/content-slots/Get-a-free-consultation-from-Mangopear-creative.jpg) top center no-repeat;
+	@include rempx(height, 522px);
+	@include rempx(max-width, 368px);
+	@include rempx(margin, 5px auto 0);
+	@include mangui-transition(ease-in-out 350ms all);
+
+
+	&:hover {
+		opacity: 0.85;
+	}
+
+
+	.o-content-slot__block-link {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+	}
+}

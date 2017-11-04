@@ -1,0 +1,65 @@
+/**
+ * Contact panel in the footer
+ */
+
+.o-panel--gallery {
+	background: #FFF;
+
+
+
+
+
+		/**
+		 * Icon
+		 */
+		
+
+		.o-blog__icon {
+			color: $grey--medium;
+			background-color: $grey--lighter;
+		}
+
+
+
+
+
+		/**
+		 * Date
+		 */
+		
+
+		.o-date__time {
+		    border: 3px solid $grey--light;
+		}
+
+
+			.o-date__day,
+			.o-date__month,
+			.o-date__year {
+			    color: $grey--light;
+			}
+}
+
+
+
+
+
+		/**
+		 * Content
+		 */
+		
+		.o-blog__gallery {
+			padding: 0;
+			margin: 0 0 2em;
+			list-style: none;
+		}
+
+
+			.c-gallery__image {
+				display: inline-block;
+				background-color: #FFF;
+				border: 1px solid $grey--light;
+				@include rempx(padding, 3px);
+				@include rempx(margin-right, 10px);
+				@include rempx(margin-bottom, 10px);
+			}

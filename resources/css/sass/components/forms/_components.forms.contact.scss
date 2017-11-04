@@ -1,0 +1,86 @@
+/**
+ * Contact us form styling
+ */
+
+.o-form--contact {
+	$form_label_width : 190px;
+
+
+
+
+
+	.o-form__field {
+		&.frm_blank_field { // If the field has failed validation
+			select,
+			textarea,
+			input[type="tel"],
+			input[type="text"],
+			input[type="email"],
+			input[type="number"] {
+				border-color: $red;
+			}
+		}
+	}
+
+
+		.o-form__message {
+			font-style: italic;
+
+
+			&--error {
+
+			}
+		}
+
+
+		.o-form__label {
+			display: inline-block;
+			@include rempx(width, $form_label_width);
+			@include mangui-breakpoint("max-width: 500px") { width: 100%; }
+		}
+
+
+		.o-form__input {
+			width: calc(100% - 200px);
+			@include mangui-breakpoint("max-width: 500px") { width: 100%; }
+
+
+			select,
+			textarea,
+			input[type="tel"],
+			input[type="text"],
+			input[type="email"],
+			input[type="number"] {
+				&:hover  { border-color: $blue--lighter; }
+				&:active { border-color: $blue--medium; }
+				&:focus  { border-color: $blue--medium; }
+			}
+		}
+
+
+
+
+
+	.o-form__submit {
+		@include rempx(margin-left, 193px);
+		@include mangui-breakpoint("max-width: 500px") { margin-left: 0; }
+	}
+}
+
+
+
+
+
+	/**
+	 * Contact form replacement title
+	 */
+	
+	.o-form__title--contact {
+		color: $blue--light;
+		letter-spacing: .325em;
+		text-transform: uppercase;
+	    border-bottom: 1px solid $grey--lighter;
+		@include rempx(font-size, 19px);
+		@include rempx(padding, 0 0 12px);
+		@include rempx(margin, 50px 0 35px);
+	}

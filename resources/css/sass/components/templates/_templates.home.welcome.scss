@@ -1,0 +1,108 @@
+/**
+ * Welcome panel
+ */
+
+.c-welcome {
+	@include mangui-keyframes(welcome-mangopear__out) {
+		  0% { opacity: 1; }
+		100% { opacity: 0; }
+	}
+
+
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	z-index: 999999;
+	pointer-events: none;
+	background: $blue--medium;
+	@include mangui-animation(welcome-mangopear__out 1s 2750ms ease-in-out forwards);
+	@include mangui-breakpoint(palm) { @include mangui-animation(welcome-mangopear__out 1s 2750ms ease-in-out forwards); }
+}
+
+
+
+
+
+	/**
+	 * Gradient
+	 */
+	
+	.c-welcome__gradient {
+		top: 50%;
+		left: 50%;
+		z-index: 98;
+		position: absolute;
+		@include rempx(width, 1000px);
+		@include rempx(height, 1000px);
+		@include rempx(margin, -500px 0 0 -500px);
+
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4CD0E0+0,129da9+65 */
+		background: #129da9; /* Old browsers */
+		background: -moz-radial-gradient(center, ellipse cover, #1CC7D6 0%, #129da9 65%); /* FF3.6-15 */
+		background: -webkit-radial-gradient(center, ellipse cover, #1CC7D6 0%, #129da9 65%); /* Chrome10-25,Safari5.1-6 */
+		background: radial-gradient(ellipse at center, #1CC7D6 0%, #129da9 65%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1CC7D6', endColorstr='#129da9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+		@include mangui-breakpoint(palm) {
+			@include rempx(width, 300px);
+			@include rempx(height, 300px);
+			@include rempx(margin, -215px 0 0 -150px);
+		}
+	}
+
+
+	.c-welcome__content {
+		z-index: 99;
+		height: 100%;
+		position: relative;
+	}
+
+
+
+
+
+	/**
+	 * Logo animation
+	 */
+	
+	.c-welcome__mangopear {
+		top: 50%;
+		left: 0;
+		right: 0;
+		text-align: center;
+		position: absolute;
+		@include mangui-transform(translateY(-75%));
+
+
+		@include mangui-keyframes(welcome-mangopear__stroke) {
+			  0% { stroke-dashoffset: 340; opacity: 0; }
+			 20% { opacity: 0.2; }
+			 80% { opacity: 1; }
+			100% { stroke-dashoffset: 0;   opacity: 1; }
+		}
+
+
+		@include mangui-keyframes(welcome-mangopear__m) {
+			  0% { fill: transparent; }
+			100% { fill: #FFFFFF; }
+		}
+
+
+		.u-mangopear-welcome-logo {
+
+		}
+
+
+			.u-welcome-mangopear__stroke {
+				stroke-dasharray: 340;
+				stroke-dashoffset: 340;
+				@include mangui-animation(welcome-mangopear__stroke 2500ms ease-in-out forwards);
+			}
+
+			.u-welcome-mangopear__m {
+				@include mangui-animation(welcome-mangopear__m 500ms 2000ms ease-in-out forwards);
+			}
+	}

@@ -1,0 +1,47 @@
+/**
+ * Main footer panel
+ */
+
+.o-panel--main-footer {
+	background: #FFF;
+	border-top: 2px solid $grey--lighter;
+}
+
+
+	.c-footer-column {
+		border-top: 1px solid $grey--lighter;
+		@include rempx(margin, 40px 0 0);
+		@include rempx(padding, 40px 0 0);
+
+
+		@include mangui-breakpoint(desk) {
+			border: 0;
+			border-left: 1px solid $grey--lighter;
+			@include rempx(margin, 0 0 0 15px);
+			@include rempx(padding, 0 0 0 40px);
+		}
+	}
+
+
+
+
+
+	/**
+	 * Copyright text
+	 */
+	
+	.c-copyright {
+		font-style: italic;
+	}
+
+
+
+
+
+	/**
+	 * Legal navigation
+	 */
+	
+	.o-nav.o-nav--legal {
+		@include rempx(margin-top, -20px);
+	}

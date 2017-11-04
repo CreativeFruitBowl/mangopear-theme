@@ -1,0 +1,14 @@
+/**
+ * Fonts
+ */
+
+$font-core: Merriweather, sans-serif;
+$font-campton: Campton-Web, $font-core;
+$font-headings: Campton-Web, $font-core;
+
+
+@font-face {
+	font-style: normal;
+	font-family: 'Campton-Web';
+	src: url(../fonts/campton/campton--book.woff) format('woff');
+}

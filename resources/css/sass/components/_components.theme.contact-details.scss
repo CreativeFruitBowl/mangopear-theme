@@ -1,0 +1,78 @@
+/**
+ * Contact details list
+ */
+
+.c-contact-details {
+    border-left: 1px solid $grey--lighter;
+    @include rempx(padding-left, 40px);
+    @include rempx(margin, 5px 0 0 10px);
+
+
+    @include mangui-breakpoint(portable) {
+	    border-left: 0;
+	    @include rempx(padding, 37px 0 0);
+	    @include rempx(margin, 40px 0 0);
+    }
+}
+
+	.c-contact-details__title {
+		overflow: hidden; // styling only
+		position: relative;
+		font-style: italic;
+		color: $grey--medium;
+		font-family: $font-core;
+		text-transform: uppercase;
+		@include rempx(font-size, 12px);
+		@include rempx(margin, 25px 0 10px);
+
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+
+		.c-contact-details__title-overflow {
+			position: relative;
+
+
+			&::after {
+			    left: 100%;
+			    content: '';
+			    position: absolute;
+			    border-top: 1px solid $grey--lighter;
+			    @include rempx(width, 1000px);
+			    @include rempx(margin-top, 8px);
+			    @include rempx(margin-left, 20px);
+			}
+		}
+	}
+
+
+
+
+
+	/**
+	 * Social media icons section
+	 */
+	
+	.o-nav--contact-social {
+		@include rempx(margin-left, -10px);
+		@include rempx(margin-right, -10px);
+
+
+		.o-nav__link {
+			color: $grey--medium;
+			@include rempx(padding, 10px);
+
+
+			&:hover {
+				color: $blue--light;
+			}
+
+
+			svg {
+				float: left;
+				display: inline-block;
+			}
+		}
+	}

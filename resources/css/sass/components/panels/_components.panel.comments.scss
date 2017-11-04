@@ -1,0 +1,135 @@
+/**
+ * Availability calendar functionality
+ */
+
+.o-panel--comments {
+	background: #F3F3F3;
+	border-top: 5px solid #EAEAEA;
+	border-bottom: 5px solid #EAEAEA;
+}
+
+
+
+
+
+	/**
+	 * Comment list
+	 */
+	
+	.o-container--comments {
+		@include rempx(max-width, 750px);
+	}
+	
+	
+		.c-comments__list,
+		.c-comments__item {
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+
+
+	
+
+
+			/**
+			 * Comment styling
+			 */
+			
+			.c-comment__head {
+				position: relative;
+				@include rempx(min-height, 96px);
+				@include rempx(padding, 0 0 20px 134px);
+				
+
+				.avatar {
+					top: 0;
+					left: 0;
+					float: left;
+					position: absolute;
+					border-radius: 3px;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.14);
+				}
+
+
+				.c-comment__title {
+					@include rempx(font-size, 20px);
+					@include rempx(margin, 15px 0 10px);
+				}
+
+
+				.c-comment__date-link {
+					color: #999;
+					font-style: italic;
+
+					&:hover { color: $blue--light; }
+				}
+
+
+				.comment-edit-link {
+					font-style: italic;
+					display: inline-block;
+					@include mangui-breakpoint(palm) { clear: left; }
+					@include mangui-breakpoint(desk) { float: right; }
+				}
+			}
+
+
+			.c-comment__content {
+				background: #FFF;
+				position: relative;
+				@include rempx(margin, 20px 0 40px);
+				@include rempx(padding, 5px 40px 5px);
+
+				@include mangui-breakpoint(palm) {
+					@include rempx(margin-left, -10px);
+					@include rempx(padding-left, 25px);
+					@include rempx(margin-right, -10px);
+					@include rempx(padding-right, 25px);
+				}
+					
+
+				&::before {
+					content: '';
+					background: #FFF;
+					position: absolute;
+					@include rempx(top, -11px);
+					@include rempx(left, 38px);
+					@include rempx(width, 20px);
+					@include rempx(height, 20px);
+					@include mangui-transform(rotate(-45deg));
+				}
+			}
+
+
+
+
+
+			/**
+			 * Comment form
+			 */
+			
+			.c-comments__form-wrapper {
+				border-top: 5px solid rgba(0,0,0,0.05);
+				@include rempx(padding, 7px 0 0);
+			}
+
+
+				.c-comments__title--leave-reply {
+					text-align: center;
+					@include rempx(margin-bottom, 26px);
+				}
+
+
+					.c-comment__form .o-form__input {
+						width: 70%;
+						@include mangui-breakpoint(palm) { width: 100%; }
+					}
+
+
+					.c-comment__form .o-form__label {
+						width: 29%;
+						@include rempx(margin-right, 3px);
+						@include rempx(padding-right, 20px);
+						@include mangui-breakpoint(palm) { width: 100%; }
+					}

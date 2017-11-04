@@ -1,0 +1,234 @@
+/**
+ * Portfolio component
+ */
+
+
+
+
+
+/**
+ * Portfolio sidebar
+ */
+
+.c-portfolio-sidebar {
+	@include mangui-breakpoint(desk) {
+		@include rempx(margin-top, -30px);
+	}
+}
+
+
+
+
+
+/**
+ * Panel heading
+ */
+
+.c-panel__heading--portfolio {
+	@include rempx(margin-bottom, $mangui-vertical-rhythm);
+}
+
+
+
+
+
+/**
+ * Panel containers
+ */
+
+.o-panel--archive-portfolio {
+	padding-top: 0;
+}
+
+
+.o-panel--single-portfolio {
+    background: #F5F5F5;
+    border-top: 3px solid #EEE;
+    border-bottom: 3px solid #EEE;
+}
+
+
+
+
+
+/**
+ * [1]	Wrapper
+ *
+ *		[a]	Get the angles to align correctly 
+ *		[b]	Rounded corners
+ *		[c]	Purely cosmetic rules
+ *		[d]	When items span multiple rows, give them some space
+ *		[e]	Change the titles to be the brand colour
+ */
+
+.c-portfolio {
+	overflow: hidden;
+	position: relative; // [a]
+	border-radius: 4px; // [b]
+	box-shadow: 0 1px 4px rgba(black, 0.2), 0 4px 10px rgba(0,0,0,0); // [c]
+	@include rempx(max-width, 368px); // [c]
+	@include rempx(margin-bottom, 20px); // [d]
+	@include mangui-transition(ease-in-out 400ms all);
+
+
+
+
+
+	&:hover {
+		box-shadow: 0 1px 4px rgba(black, 0.2), 0 4px 10px rgba(0,0,0,0.3); // [c]
+	
+
+		.c-portfolio__title-link {
+			color: $blue--darker;
+		}
+
+
+		.c-portfolio__image {
+			.c-portfolio__image-el {
+				@include mangui-transform(scale(1.05));
+			}
+
+
+			&::after {
+				background-color: rgba(black, .3);
+			}
+		}
+
+
+		.c-portfolio__button {
+			opacity: 1;
+			@include mangui-transform(translateY(0));
+		}
+	}
+}
+
+
+
+
+
+	/**
+	 * [2]	Header and content
+	 */
+	
+	.c-portfolio__header {
+		width: 100%;
+		float: left;
+		background: #FFF;
+		text-align: left;
+		position: relative;
+		@include rempx(padding, 0 30px);
+
+
+		&:after {
+			left: 0;
+			content: '';
+			width: 100%;
+			bottom: -30px;
+			z-index: 2500;
+			position: absolute;
+			border-top: 30px solid #FFF;
+			border-right: 368px solid transparent;
+		}
+	}
+
+
+
+
+
+		.c-portfolio__title {
+			@include rempx(font-size, 20px);
+			@include rempx(margin, 30px 0 0);
+		}
+
+
+			.c-portfolio__strapline {
+				display: block;
+				font-weight: normal;
+				font-family: $font-core;
+				text-transform: uppercase;
+				border-bottom: 1px solid $grey--lighter;
+				@include rempx(font-size, 12px);
+				@include rempx(margin, 5px 0 0);
+				@include rempx(padding, 0 0 12px);
+			}
+
+
+
+
+
+		.c-portfolio__content {
+			z-index: 2;
+			text-align: left;
+			line-height: 1.7;
+			font-style: italic;
+			position: relative;
+			@include rempx(font-size, 14px);
+			@include rempx(min-height, 70px);
+			@include rempx(margin, 15px 0 20px);
+			@include mangui-transition(ease-in-out 400ms all);
+
+
+			p {
+				margin: 0;
+			}
+		}
+
+
+
+
+
+		.c-portfolio__image {
+			width: 100%;
+			float: left;
+			display: block;
+			overflow: hidden;
+			position: relative;
+
+
+			&::after {
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				content: '';
+				position: absolute;
+				@include mangui-transition(ease-in-out 400ms all);
+			}
+		}
+
+
+			.c-portfolio__image-el {
+				@include mangui-transition(ease-in-out 400ms all);
+			}
+
+
+
+
+
+		.c-portfolio__button {
+			opacity: 0;
+			width: 100%;
+			z-index: 2501;
+			text-align: center;
+			position: absolute;
+			@include rempx(bottom, 30px);
+			@include mangui-transform(translateY(50px));
+			@include mangui-transition(ease-in-out 400ms all);
+
+			.o-button {
+				color: #FFF;
+			}
+		}
+
+
+
+
+
+		.c-portfolio__overlay-link {
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 2502;
+			position: absolute;
+		}

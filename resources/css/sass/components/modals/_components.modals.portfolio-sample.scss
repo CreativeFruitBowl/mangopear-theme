@@ -1,0 +1,41 @@
+/**
+ * Modifications for work sample modals
+ */
+
+.o-modal--portfolio-sample {
+
+}
+
+
+	.o-modal__content {
+
+	}
+
+
+		.o-modal-gallery {
+			margin: 0;
+			padding: 0;
+		}
+
+
+			.o-modal-gallery__slide {
+				margin: 0;
+				display: block;
+				@include rempx(padding, 20px 0);
+
+
+				+ .o-modal-gallery__slide {
+					border-top: 1px solid $grey--lighter;
+				}
+			}
+
+
+				.o-modal-gallery__description.o-modal-gallery__description {
+					text-align: center;
+					@include rempx(margin, 25px 0 10px);
+
+
+					@include mangui-breakpoint(palm) {
+						@include rempx(font-size, 14px);
+					}
+				}

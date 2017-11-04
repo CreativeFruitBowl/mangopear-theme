@@ -1,0 +1,57 @@
+/**
+ * Styled pod
+ */
+
+.o-pod--styled {
+	border: $pod-style--border;
+	background: $pod-style--background;
+	box-shadow: $pod-style--box-shadow;
+
+
+
+
+
+	.o-pod__header {
+		border-bottom: $pod-style--border;
+
+
+		&.o-pod__header--padded {
+			@include rempx(padding, 10px 20px);
+		}
+	}
+
+
+		.o-pod__title {
+			margin: 0;
+			@include rempx(font-size, 19px);
+		}
+
+
+
+
+
+	.o-pod__content {
+		&.o-pod__content--padded {
+			@include rempx(padding, 10px 20px);
+		}
+	}
+
+
+
+
+
+	.o-pod__footer {
+		border-top: $pod-style--border;
+
+
+		&.o-pod__footer--padded {
+			@include rempx(padding, 10px 20px);
+		}
+
+
+		p {
+			&:first-of-type { margin-top: 0; }
+			&:last-of-type  { margin-bottom: 0; }
+		}
+	}
+}

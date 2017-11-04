@@ -1,0 +1,265 @@
+/**
+ * Portfolio item
+ */
+
+
+
+
+
+/**
+ * Panel title
+ */
+
+
+
+
+
+
+
+/**
+ * [1]	Wrapper
+ *
+ *		[a]	Get the angles to align correctly 
+ *		[b]	Rounded corners
+ *		[c]	Purely cosmetic rules
+ *		[d]	When items span multiple rows, give them some space
+ *		[e]	Assign background images and positioning
+ *		[f]	Change the titles to be the brand colour
+ */
+
+.c-portfolio-item {
+	position: relative; // [a]
+	border-radius: 4px; // [b]
+	box-shadow: 0 1px 4px rgba(black, 0.2); // [c]
+	@include rempx(height, 475px); // [c]
+	@include rempx(max-width, 368px); // [c]
+	@include rempx(margin, $mangui-vertical-rhythm/2 auto $mangui-vertical-rhythm/2); // [d]
+
+
+	// [e]
+	&--jeakins 	{ background: url(../../images/_uploaded-to-wordpress/footer-portfolio.jpg) bottom left no-repeat; }
+	&--gardbus 	{ background: url(../../images/_uploaded-to-wordpress/footer-portfolio.jpg) bottom center no-repeat; }
+	&--silk 	{ background: url(../../images/_uploaded-to-wordpress/footer-portfolio.jpg) bottom right no-repeat; }
+
+
+	// [f]
+	@each $brand in $link-pod-brands {
+		$brand-name: nth($brand, 1);
+		$colour: 	 nth($brand, 2);
+
+
+		&--#{$brand-name} .c-portfolio-item__header__link { color: $colour; }
+		&--#{$brand-name} .c-portfolio-item__header__link:hover { color: mangui-shade($colour, 20%); }
+
+
+		&--#{$brand-name}.c-portfolio-item--has-list { background: $colour; }
+		&--#{$brand-name}.c-portfolio-item--has-list .c-portfolio-item__content,
+		&--#{$brand-name}.c-portfolio-item--has-list .c-portfolio-item__note { color: mangui-tint($colour, 65%); }
+		
+		&--#{$brand-name}.c-portfolio-item--has-list .c-portfolio-item__header,
+		&--#{$brand-name}.c-portfolio-item--has-list .c-portfolio-item__header::before,
+		&--#{$brand-name}.c-portfolio-item--has-list .c-portfolio-item__header::after { background: mangui-shade($colour, 15%); }
+	}
+}
+
+
+
+
+
+.c-portfolio-item--has-link {
+	/**
+	 * Hover effects
+	 *
+	 * 		[a]	Move the angles higher
+	 * 		[b]	Rotate angles
+	 * 		[c]	Move title slightly lower
+	 * 		[d]	Fade out content
+	 * 		[e]	Fade in button
+	 * 		[f]	Raise the button from the bottom
+	 */
+	
+	&:hover {
+		.c-portfolio-item__header {
+			//&::before, &::after { @include rempx(top, 71px); } // [a]
+			&::before { @include mangui-transform(skewY(-15deg)); } // [b]
+			&::after { @include mangui-transform(skewY(15deg)); } // [b]
+		}
+
+
+		.c-portfolio-item__heading {
+			@include mangui-transform(translateY(35px)); // [c]
+
+			.c-portfolio-item__header__link {
+				&::before,
+				&::after { opacity: 1; }
+				&::after { @include mangui-transform(translateX(-15px)); }
+			}
+		}
+
+
+		.c-portfolio-item__content {
+			opacity: 0; // [d]
+		}
+
+
+		.c-portfolio-item__button { 
+			opacity: 1; // [e]
+			@include mangui-transform(translateY(0)); // [f]
+
+			&:hover {
+				color: #FFF;
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+
+
+
+
+/**
+ * No link but has list
+ */
+
+.c-portfolio-item--has-list {
+	@include rempx(height, 300px);
+
+
+	.c-portfolio-item__header {
+		&::before,
+		&::after {
+			@include rempx(top, 75px);
+			@include rempx(height, 60px);
+		}
+		
+
+		&::before { @include mangui-transform(skewY(8deg)); }
+		&::after  { @include mangui-transform(skewY(-8deg)); }
+	}
+
+
+		.c-portfolio-item__heading {
+			color: #FFF;
+			@include rempx(margin-top, 25px);
+		}
+
+
+		.c-portfolio-item__list {
+			clear: both;
+			color: #FFF;
+			@include rempx(padding, 48px 0 0 60px);
+		}
+}
+
+
+
+
+
+	/**
+	 * [2]	Header and content
+	 *
+	 * 		[a]	Purely cosmetic rules
+	 * 		[b]	Fix floats
+	 * 		[c]	Get pseudo elements to align correctly
+	 */
+	
+	.c-portfolio-item__header {
+		background: #FFF; // [a]
+		text-align: center; // [a]
+		float: left; // [b]
+		position: relative; // [c]
+		border-radius: 4px 4px 0 0;
+
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			background: #FFF;
+			@include rempx(top, 100px);
+			@include rempx(height, 80px);
+			@include mangui-transition(ease-in-out 250ms all);
+		}
+
+		&::before {
+			left: 0;
+			right: 50%;
+			@include mangui-transform(skewY(15deg));
+		}
+
+		&::after {
+			left: 50%;
+			right: 0;
+			@include mangui-transform(skewY(-15deg));
+		}
+	}
+
+
+		.c-portfolio-item__heading {
+			position: relative;
+			z-index: 3;
+			@include rempx(margin, 40px 0 0);
+			@include mangui-transition(ease-in-out 250ms all);
+
+
+			.c-portfolio-item__header__link {
+				&::before {
+					opacity: 0;
+					width: 100%;
+					display: block;
+					position: absolute;
+					font-family: $font-core;
+					text-transform: uppercase;
+					content: 'Read case study:';
+					@include rempx(margin-top, -$mangui-vertical-rhythm/2);
+					@include rempx(font-size, 12px);
+					@include mangui-transition(ease-in-out 250ms all);
+				}
+
+
+				&::after {
+					content: '\00BB';
+					position: absolute;
+					margin-left: .75em;
+					opacity: 0;
+					font-size: 130%;
+					line-height: 1;
+					@include mangui-transition(ease-in-out all 250ms);
+				}
+			}
+		}
+
+
+		.c-portfolio-item__content {
+			position: relative;
+			z-index: 2;
+			@include rempx(font-size, 15px);
+			@include rempx(margin, 8px 0 0);
+			@include rempx(padding, 0 $mangui-vertical-rhythm*1.5);
+			@include mangui-transition(ease-in-out 250ms all);
+		}
+
+
+		.c-portfolio-item__note {
+			text-align: center;
+			@include rempx(font-size, 14px);
+		}
+
+
+
+
+
+	/**
+	 * [3]	Read more button
+	 */
+	
+	.c-portfolio-item__button {
+		position: absolute;
+		color: #FFF;
+		left: 50%;
+		opacity: 0;
+		@include rempx(bottom, 40px);
+		@include rempx(margin-left, -60px);
+		@include mangui-transform(translateY(70px));
+	}
