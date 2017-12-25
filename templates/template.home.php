@@ -1,9 +1,26 @@
 <?php
 
 	/**
-	 * Template name: [Detail] Homepage
+	 * Template name: Home
+	 *
+	 * @category    template
+	 * @package     mangopear
+	 * @author      Andi North <andi@mangopear.co.uk>
+	 * @copyright   2018 Mangopear Limited
+	 * @license     GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+	 * @since       1.0.0
+	 * @version     4.0.0
 	 */
-	
+
+
+	/**
+	 * CHANGELOG
+	 *
+	 * @version 4.0.0
+	 *          Re-wrote template
+	 */
+
+
 	get_header();
 
 ?>
