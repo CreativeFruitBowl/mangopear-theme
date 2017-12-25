@@ -12,9 +12,6 @@
 
 
 	<div class="c-welcome">
-		<div class="c-welcome__gradient"></div>
-
-
 		<div class="c-welcome__content">
 			<div class="c-welcome__mangopear">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200" xml:space="preserve" class="u-mangopear-welcome-logo">
