@@ -195,9 +195,8 @@
 				<input type="text" name="s" value="" class="c-search__input" placeholder="Search mangopear creative" data-swplive="true">
 
 				<button class="c-search__submit  o-button">
-					<svg class="o-icon--search" viewBox="0 0 32 32" width="20" height="20">
-						<path class="c-search__glass" fill="currentColor" d="M30.2,26.1l-5.4-5.4c1.5-2.1,2.3-4.7,2.3-7.5C27.1,6,21.2,0.1,14,0.1C6.7,0.1,0.8,6,0.8,13.2c0,7.3,5.9,13.2,13.1,13.2c2,0,3.9-0.4,5.6-1.2l5.8,5.8c0.6,0.6,1.5,1,2.4,1c0.9,0,1.8-0.4,2.4-1C31.5,29.6,31.5,27.4,30.2,26.1zM6.1,13.2c0-4.4,3.5-7.9,7.9-7.9c4.4,0,7.9,3.5,7.9,7.9c0,4.4-3.5,7.9-7.9,7.9C9.6,21.1,6.1,17.6,6.1,13.2z"/>
-					</svg>
+					<svg class="o-icon--search" height="32" width="32" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#search"/></svg>
+					<span class="u-hide">Search</span>
 				</button>
 			</form>
 
@@ -208,9 +207,7 @@
 			<div class="c-main-header__toggle--account  c-main-header__cell  c-main-header__cell--right">
 				<input type="checkbox" name="js-nav-toggle--account" id="js-nav-toggle--account" class="c-nav-toggle__input  js-nav-toggle__input">
 				<label class="c-nav-toggle__label  js-nav-toggle__label" for="js-nav-toggle--account" tabindex="1">
-					<svg class="o-icon  o-icon--account-navigation" fill="currentColor" viewBox="0 0 24 24" height="32" width="32">
-						<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-					</svg>
+					<svg class="o-icon  o-icon--account-navigation" height="32" width="32" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#person"/></svg>
 					<span class="u-invisible">Toggle navigation</span>
 				</label><!-- /.c-nav-toggle__label -->
 
