@@ -66,7 +66,7 @@
 
 	<body <?php body_class(); ?>>
 		<header class="c-main-header  js-main-header  has-transition  u-clearfix">
-			<div class="c-main-header__toggle  c-main-header__cell  c-main-header__cell--left">
+			<div class="c-main-header__toggle  c-main-header__cell  c-main-header__cell--left" style="padding-right: 15px;">
 				<input type="checkbox" name="js-nav-toggle--main" id="js-nav-toggle--main" class="c-nav-toggle__input  js-nav-toggle__input">
 				<label class="c-nav-toggle__label  js-nav-toggle__label" for="js-nav-toggle--main" tabindex="1">
 					<i class="o-icon  o-icon--navigation"><span class="c-navigation-icon__bar--one"></span><span class="c-navigation-icon__bar--two"></span><span class="c-navigation-icon__bar--three"></span></i>
