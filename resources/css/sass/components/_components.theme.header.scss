@@ -22,8 +22,8 @@
 		z-index: 94999; // Just below the main nav
 		display: table;
 		position: relative;
-		background: $blue--medium;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+		background: $blue--dark;
+		box-shadow: 0 0 0 4px rgba(0,0,0,0.2);
 		border-bottom: 1px solid rgba(0,0,0,0.1);
 		@include mangui-breakpoint(desk) { position: fixed; }
 
@@ -171,13 +171,13 @@
 			outline: 0;
 			width: 85%;
 			color: #FFF;
-			border-radius: 2px;
+			border-radius: 30px;
 			background: rgba(255,255,255,.2);
 			box-shadow: 0 1px 4px rgba(0,0,0,0), 0 5px 10px rgba(0,0,0,0);
 			@include rempx(max-width, 550px);
-			@include rempx(height, 48px);
-			@include rempx(padding, 0 20px);
-			@include rempx(margin-top, 6px);
+			@include rempx(height, 42px);
+			@include rempx(padding, 0 30px);
+			@include rempx(margin-top, 11px);
 			@include mangui-transition(none);
 			@include mangui-transition(ease-in-out 350ms all);
 			
@@ -206,11 +206,11 @@
 			&:focus,
 			&:active {
 				background: #FFF;
-				color: $grey--medium;
+				color: $grey--dark;
 				box-shadow: 0 1px 4px rgba(0,0,0,0), 0 5px 10px rgba(0,0,0,0.3);
 				
-				@include mangui-placeholder() { color: $blue--light; }
-				+ .c-search__submit { color: $blue--light; }
+				@include mangui-placeholder() { color: $grey--medium; }
+				+ .c-search__submit { color: $blue--medium; }
 			}
 
 
@@ -220,7 +220,7 @@
 			.c-search__submit {
 				position: relative;
 				color: $grey--medium;
-				@include rempx(top, 6px);
+				@include rempx(top, 10px);
 				@include rempx(left, -46px);
 				@include mangui-transition(none);
 
