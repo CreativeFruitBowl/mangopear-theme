@@ -1,0 +1,82 @@
+/**
+ * [Component] WooCommerce > Label builder
+ *
+ * This component is part of the "Hildon for your special day" template and has shared 
+ * components throughout the e-commerce process.
+ *
+ * @category	Component
+ * @package		mangopear
+ * @author		Andi North <andi@mangopear.co.uk>
+ * @copyright	2018 Mangopear creative
+ * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+ * @since   	4.0.0
+ * @version   	4.0.0
+ */
+
+
+/**
+ * CONTENTS
+ *
+ * [1]	Head > Wrapper
+ * [2]	Head > Navigation
+ */
+
+
+/**
+ * [1]	Head > Wrapper
+ */
+
+.c-head--sub {
+	z-index: 1;
+	overflow: auto;
+	position: relative;
+	background: $blue--darker;
+	box-shadow: 0 0 0 4px rgba(0,0,0,0.25);
+	@include mangui-breakpoint(desk) { @include rempx(margin-top, 63px); }
+	@include mangui-breakpoint("max-width: 650px") { @include rempx(margin-top, 121px); }
+
+
+	+ .o-panel--title {
+		@include rempx(padding-top, 40px);
+	}
+}
+
+
+
+
+
+	/**
+	 * [2]	Head > Navigation
+	 */
+	
+	.c-head--sub {
+		.o-nav {
+			text-align: center;
+			white-space: nowrap;
+			@include rempx(padding, 0 25px);
+		}
+
+
+			.o-nav__item {
+				@include rempx(padding, 0 15px);
+			}
+
+
+				.o-nav__link {
+					font-weight: bold;
+					color: $blue--lighter;
+					font-family: $font-campton;
+					border-bottom:  2px solid transparent;
+					@include rempx(font-size, 16px);
+					@include rempx(padding, 12px 0 8px);
+					@include mangui-transition(ease-in-out all 450ms);
+
+
+					&:hover,
+					&:active,
+					&:focus {
+						color: #FFF;
+						border-bottom-color: #FFF;
+					}
+				}
+	}
