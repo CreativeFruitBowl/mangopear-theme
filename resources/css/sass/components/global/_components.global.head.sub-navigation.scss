@@ -68,7 +68,7 @@
 					font-family: $font-campton;
 					border-bottom:  2px solid transparent;
 					@include rempx(font-size, 16px);
-					@include rempx(padding, 12px 0 8px);
+					@include rempx(padding, 18px 0 13px);
 					@include mangui-transition(ease-in-out all 450ms);
 
 
