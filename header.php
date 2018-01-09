@@ -192,7 +192,8 @@
 
 			<form role="search" method="get" action="<?php bloginfo('url');?>" class="c-search__form  c-main-header__cell  c-main-header__cell--center">
 				<input type="hidden" value="Search">
-				<input type="text" name="s" value="" class="c-search__input" placeholder="Search mangopear creative" data-swplive="true">
+				<label for="s" class="u-hide">Search this website</label>
+				<input type="text" name="s" value="" class="c-search__input" placeholder="Search this website" data-swplive="true">
 
 				<button class="c-search__submit  o-button">
 					<svg class="o-icon--search" height="32" width="32" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#search"/></svg>
