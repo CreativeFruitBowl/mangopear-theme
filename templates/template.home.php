@@ -1,9 +1,26 @@
 <?php
 
 	/**
-	 * Template name: [Detail] Homepage
+	 * Template name: Home
+	 *
+	 * @category    template
+	 * @package     mangopear
+	 * @author      Andi North <andi@mangopear.co.uk>
+	 * @copyright   2018 Mangopear Limited
+	 * @license     GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+	 * @since       1.0.0
+	 * @version     4.0.0
 	 */
-	
+
+
+	/**
+	 * CHANGELOG
+	 *
+	 * @version 4.0.0
+	 *          Re-wrote template
+	 */
+
+
 	get_header();
 
 ?>
@@ -12,9 +29,6 @@
 
 
 	<div class="c-welcome">
-		<div class="c-welcome__gradient"></div>
-
-
 		<div class="c-welcome__content">
 			<div class="c-welcome__mangopear">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200" xml:space="preserve" class="u-mangopear-welcome-logo">
@@ -74,37 +88,6 @@
 
 
 	<?php mangopear_panel_services($show_button = true); ?>
-
-
-
-
-
-	<!-- Web font loading -->
-	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-	<script>
-		WebFont.load({
-			google: {
-				families: ['Roboto:300,400,700']
-			}
-		});
-	</script>
-
-
-
-
-
-	<!-- Google Analytics tracking code -->
-	<script async defer>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','/wp-content/themes/mangopear/resources/js/analytics.js','ga');
-
-		ga('create', 'UA-45542791-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-</body>
-</html>
 
 
 
