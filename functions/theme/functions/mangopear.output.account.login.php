@@ -24,8 +24,10 @@
 
 
 				<div class="o-form__field  o-form__field--single-checkbox">
-					<div class="o-form__input"><input type="checkbox" id="rememberme" name="rememberme" value="forever"></div>
-					<label class="o-form__label" for="rememberme">Keep me logged in</label>
+					<label class="o-form__label">
+						<div class="o-form__input"><input type="checkbox" id="rememberme" name="rememberme" value="forever"></div>
+						Keep me logged in
+					</label>
 				</div><!-- /.o-form__field -->
 
 
