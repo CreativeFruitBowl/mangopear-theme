@@ -1,0 +1,85 @@
+/**
+ * [Object] Blocks
+ *
+ * @category	Object
+ * @package		mangopear
+ * @author		Andi North <andi@mangopear.co.uk>
+ * @copyright	2018 Mangopear creative
+ * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+ * @since   	4.0.0
+ * @version   	4.0.0
+ */
+
+
+/**
+ * CHANGELOG
+ *
+ * @version 4.0.0
+ *          Initial styles and structure
+ */
+
+
+/**
+ * CONTENTS
+ *
+ * [1]	Block wrapper
+ */
+
+
+/**
+ * [1]	Block wrapper
+ */
+
+.o-block {
+
+}
+
+
+
+
+
+	/**
+	 * [2]	Block > Media
+	 */
+	
+	.o-block__media {
+		text-align: center;
+	}
+
+
+
+
+
+	/**
+	 * [3] Block > Content
+	 */
+	
+	.o-block__content {
+
+	}
+
+
+
+
+
+/**
+ * [4]	Block variant > Has background
+ */
+
+.o-block--has-background {
+
+}
+
+
+
+
+
+/**
+ * [5]	Block variant > Has different text colour
+ */
+
+.o-block--has-coloured-text {
+	p {
+		opacity: .8;
+	}
+}
