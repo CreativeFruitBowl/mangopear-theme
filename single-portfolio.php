@@ -71,12 +71,16 @@
 	 */
 	
 	if (have_rows('rows')) :
-		echo 'ROWS FOUND';
-
-
 		while (have_rows('rows')) : the_row();
 			if (get_row_layout() == 'default') :
-				echo 'This is a default row';
+				mangopear_panel__portfolio__default(
+					$args = array(
+						'image'					=> get_sub_field('image'),
+						'content'				=> get_sub_field('content'),
+						'colour--background'	=> get_sub_field('colour--background'),
+						'colour--text'			=> get_sub_field('colour--text'),
+					)
+				);
 
 
 			elseif (get_row_layout() == 'cta') :
