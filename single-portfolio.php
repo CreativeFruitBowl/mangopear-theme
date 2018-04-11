@@ -61,6 +61,37 @@
 	 */
 	
 	mangopear_output_page_title();
+
+
+
+
+
+	/**
+	 * Show rows if defined in post
+	 */
+	
+	if (have_rows('rows')) :
+		echo 'ROWS FOUND';
+
+
+		while (have_rows('rows')) : the_row();
+			if (get_row_layout() == 'default') :
+				echo 'This is a default row';
+
+
+			elseif (get_row_layout() == 'cta') :
+				mangopear_panel_cta(
+					$args = array(
+						'title'			=> get_sub_field('title'),
+						'content'		=> get_sub_field('content'),
+						'url'			=> get_sub_field('url'),
+						'button_text'	=> get_sub_field('button__text'),
+					)
+				);
+
+			endif;
+		endwhile;
+	endif;
 	
 ?>
 
