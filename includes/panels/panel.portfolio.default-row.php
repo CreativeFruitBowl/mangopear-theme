@@ -69,9 +69,12 @@ if (! function_exists('mangopear_panel__portfolio__default')) :
 		$class__background = ($args['colour--background']) ? 'o-block--has-background' : '';
 		$class__typography = ($args['colour--text'])       ? 'o-block--has-coloured-text' : '';
 
+		$style__background = ($args['colour--background']) ? 'background: ' . $args['colour--background'] . ';' : '';
+		$style__typography = ($args['colour--text'])       ? 'color: '      . $args['colour--text']       . ';' : '';
+
 ?>
 
-		<section class="o-block  <?php echo $class__background . '  ' . $class__typography; ?>">
+		<section class="o-block  <?php echo $class__background . '  ' . $class__typography; ?>" style="<?php echo $style__background . ' ' . $style__typography; ?>">
 			<?php if ($args['image']) : ?>
 				<div class="o-block__media">
 					<img class="o-block__media__asset" 
