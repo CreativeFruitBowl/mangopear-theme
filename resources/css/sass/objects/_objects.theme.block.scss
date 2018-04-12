@@ -31,7 +31,9 @@
  */
 
 .o-block {
-
+	@extend %u-clearfix;
+	@include rempx(padding, 60px 40px);
+	@include mangui-breakpoint(palm) { @include rempx(padding, 60px 20px); }
 }
 
 
@@ -44,6 +46,7 @@
 	
 	.o-block__media {
 		text-align: center;
+		@include rempx(margin-bottom, 60px);
 	}
 
 
@@ -79,7 +82,13 @@
  */
 
 .o-block--has-coloured-text {
-	p {
-		opacity: .8;
+	p,
+	h1, h2, h3, h4, h5, h6,
+	li, dd, dl {
+		color: inherit;
 	}
+
+
+	p, ol, ul { opacity: .7; }
+	ol ol, ol ul, ul ul, ul ol { opacity: 1; }
 }
