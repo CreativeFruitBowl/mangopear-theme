@@ -56,6 +56,7 @@ if (! function_exists('mangopear_panel__portfolio__default')) :
 		 */
 		
 		$defaults = array(
+			'media__format'			=> '',
 			'image'					=> '',
 			'image--second'			=> '',
 			'content'				=> '',
