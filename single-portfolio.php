@@ -78,6 +78,7 @@
 						'image'					=> get_sub_field('image'),
 						'image--second'			=> get_sub_field('image--second'),
 						'media__format'			=> get_sub_field('media__format'),
+						'media__padding'		=> get_sub_field('media__padding'),
 						'content'				=> get_sub_field('content'),
 						'colour--background'	=> get_sub_field('colour--background'),
 						'colour--text'			=> get_sub_field('colour--text'),

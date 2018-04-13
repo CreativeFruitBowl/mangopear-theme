@@ -57,6 +57,7 @@ if (! function_exists('mangopear_panel__portfolio__default')) :
 		
 		$defaults = array(
 			'media__format'			=> '',
+			'media__padding'		=> '',
 			'image'					=> '',
 			'image--second'			=> '',
 			'content'				=> '',
@@ -73,6 +74,8 @@ if (! function_exists('mangopear_panel__portfolio__default')) :
 
 		$style__background = ($args['colour--background']) ? 'background: ' . $args['colour--background'] . ';' : '';
 		$style__typography = ($args['colour--text'])       ? 'color: '      . $args['colour--text']       . ';' : '';
+
+		$class__image_padding = (! $args['media__padding']) ? 'has-no-padding' : '';
 
 ?>
 
