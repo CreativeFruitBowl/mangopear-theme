@@ -57,6 +57,7 @@ if (! function_exists('mangopear_panel__portfolio__default')) :
 		
 		$defaults = array(
 			'image'					=> '',
+			'image--second'			=> '',
 			'content'				=> '',
 			'colour--background'	=> '',
 			'colour--text'			=> '',
@@ -76,17 +77,40 @@ if (! function_exists('mangopear_panel__portfolio__default')) :
 
 		<section class="o-block  <?php echo $class__background . '  ' . $class__typography; ?>" style="<?php echo $style__background . ' ' . $style__typography; ?>">
 			<?php if ($args['image']) : ?>
-				<div class="o-block__media">
-					<img class="o-block__media__asset" 
-					     alt="<?php $args['imaage']['title']; ?>" 
-					     src="data:image/gulpif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
-					     data-src="<?php echo $args['image']['url']; ?>">
+				<?php if ($args['media__format'] == 'double') : ?>
+					<div class="o-block__media  o-block__media--double  <?php echo $class__image_padding; ?>">
+						<img class="o-block__media__asset" 
+						     alt="<?php $args['imaage']['title']; ?>" 
+						     src="data:image/gulpif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+						     data-src="<?php echo $args['image']['url']; ?>">
 
 
-					<noscript>
-						<img class="o-block__media__asset  o-block__media__asset--noscript" alt="<?php $args['imaage']['title']; ?>" src="<?php echo $args['image']['url']; ?>">
-					</noscript>
-				</div><!-- /.c-portfolio__image -->
+						<img class="o-block__media__asset" 
+						     alt="<?php $args['imaage']['title']; ?>" 
+						     src="data:image/gulpif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+						     data-src="<?php echo $args['image--second']['url']; ?>">
+
+
+						<noscript>
+							<img class="o-block__media__asset  o-block__media__asset--noscript" alt="<?php $args['imaage']['title']; ?>" src="<?php echo $args['image']['url']; ?>">
+							<img class="o-block__media__asset  o-block__media__asset--noscript" alt="<?php $args['imaage--second']['title']; ?>" src="<?php echo $args['image--second']['url']; ?>">
+						</noscript>
+					</div><!-- /.c-portfolio__image -->
+
+
+				<?php else : ?>
+					<div class="o-block__media  <?php echo $class__image_padding; ?>">
+						<img class="o-block__media__asset" 
+						     alt="<?php $args['imaage']['title']; ?>" 
+						     src="data:image/gulpif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+						     data-src="<?php echo $args['image']['url']; ?>">
+
+
+						<noscript>
+							<img class="o-block__media__asset  o-block__media__asset--noscript" alt="<?php $args['imaage']['title']; ?>" src="<?php echo $args['image']['url']; ?>">
+						</noscript>
+					</div><!-- /.c-portfolio__image -->
+				<?php endif; ?>
 			<?php endif; ?>
 
 

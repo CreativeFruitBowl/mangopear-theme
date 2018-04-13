@@ -76,6 +76,7 @@
 				mangopear_panel__portfolio__default(
 					$args = array(
 						'image'					=> get_sub_field('image'),
+						'image--second'			=> get_sub_field('image--second'),
 						'content'				=> get_sub_field('content'),
 						'colour--background'	=> get_sub_field('colour--background'),
 						'colour--text'			=> get_sub_field('colour--text'),
