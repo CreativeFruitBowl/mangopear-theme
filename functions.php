@@ -39,9 +39,13 @@
 
 	/**
 	 * [1]	Include MangUI Startr functions
+	 *
+	 * 		[a]	Include theme functions
+	 * 		[b]	Include Gutenberg blocks
 	 */
 
-	require_once get_template_directory() . '/functions/functions.php'; // [b]
+	require_once get_template_directory() . '/functions/functions.php'; // [a]
+	require_once get_template_directory() . '/gutenberg/gutenberg.php'; // [b]
 
 
 
