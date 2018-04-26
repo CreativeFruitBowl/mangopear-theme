@@ -61,6 +61,44 @@
 	 */
 	
 	mangopear_output_page_title();
+
+
+
+
+
+	/**
+	 * Show rows if defined in post
+	 */
+	
+	if (have_rows('rows')) :
+		while (have_rows('rows')) : the_row();
+			if (get_row_layout() == 'default') :
+				mangopear_panel__portfolio__default(
+					$args = array(
+						'image'					=> get_sub_field('image'),
+						'image--second'			=> get_sub_field('image--second'),
+						'media__format'			=> get_sub_field('media__format'),
+						'media__padding'		=> get_sub_field('media__padding'),
+						'content'				=> get_sub_field('content'),
+						'colour--background'	=> get_sub_field('colour--background'),
+						'colour--text'			=> get_sub_field('colour--text'),
+					)
+				);
+
+
+			elseif (get_row_layout() == 'cta') :
+				mangopear_panel_cta(
+					$args = array(
+						'title'			=> get_sub_field('title'),
+						'content'		=> get_sub_field('content'),
+						'url'			=> get_sub_field('url'),
+						'button_text'	=> get_sub_field('button__text'),
+					)
+				);
+
+			endif;
+		endwhile;
+	endif;
 	
 ?>
 

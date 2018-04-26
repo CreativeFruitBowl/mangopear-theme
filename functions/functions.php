@@ -122,6 +122,8 @@
 	require_once get_template_directory() . '/functions/theme/flexible-panels/mangopear.flexible-panel.testimonial.edge.php';
 	require_once get_template_directory() . '/functions/theme/flexible-panels/mangopear.flexible-panel.testimonial.hildon.generic.php';
 
+	require_once get_template_directory() . '/includes/panels/panel.portfolio.default-row.php';
+
 
 
 
