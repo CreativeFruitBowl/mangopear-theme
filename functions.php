@@ -26,7 +26,6 @@
 	 * [5]	Add image sizes
 	 * [6]	Dequeue SearchWP default styles
 	 * [7]	Post formats
-	 * [8]	Custom menu function to use instead of nav_menu
 	 * [9]	Remove emoji support
 	 * [10]	Remove jQuery migrate
 	 * [11]	Wrap tables in a class
@@ -169,16 +168,6 @@
 	 */
 	
 	add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
-
-
-
-
-
-	/**
-	 * [8]	Custom menu function to use instead of nav_menu
-	 */
-
-	require_once get_template_directory() . '/functions/mangui/mangui.output.custom-menu-markup.php';
 
 
 
