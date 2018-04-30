@@ -32,7 +32,7 @@
 
 		<div class="c-portfolio-header__content">
 			<h1 class="c-portfolio-header__title">Our work</h1>
-			<h2 class="c-portfolio-header__title--sub">Mangopear creative</h2>
+			<h2 class="c-portfolio-header__title--sub" aria-hidden="true">Mangopear creative</h2>
 			<h3 class="c-portfolio-header__descriptor">We’re really rather proud of our work here at Mangopear, below is a sample of the work we're proudest of.</h3>
 		</div>
 	</header>
