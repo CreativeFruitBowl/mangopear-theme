@@ -40,7 +40,6 @@
 	 */
 
 	require_once get_template_directory() . '/functions/functions.php'; // [a]
-	require_once get_template_directory() . '/gutenberg/gutenberg.php'; // [b]
 
 
 
