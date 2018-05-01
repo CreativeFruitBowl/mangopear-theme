@@ -12,10 +12,10 @@
 	 * @link 		https://mangopear.co.uk/
 	 * @since   	2.0.0
 	 */
-	
+
 
 	get_header();
-	
+
 ?>
 
 
