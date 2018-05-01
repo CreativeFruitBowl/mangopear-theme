@@ -71,6 +71,9 @@
 			</section><!-- /.container -->
 
 
+			<?php get_template_part('template-partials/pagination'); ?>
+
+
 		<?php else : ?>
 			<section class="lister--blog  lister--no-posts  container">
 				<h1 class="header--stylised">My writings</h1>
