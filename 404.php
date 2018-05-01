@@ -1,21 +1,23 @@
 <?php
-	
-	/**
-	 * Get the header code
-	 */
-	get_header();
-
 
 	/**
-	 * Output page title
+	 * Core template: Error 404
 	 *
-	 * @see /themes/mangopear/functions/source/mangopear/mangopear.output.page-title.php
+	 * @category 	Templates
+	 * @package  	mangopear
+	 * @author  	Andi North <andi@mangopear.co.uk>
+	 * @copyright  	2018 Mangopear creative
+	 * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+	 * @version  	4.0.0
+	 * @link 		https://mangopear.co.uk/
+	 * @since   	2.0.0
 	 */
-	
 	mangopear_output_page_title($show_title = true, $show_breadcrumb = false, $title_content = 'Whoops!');
 
-?>
 
+	get_header();
+
+?>
 
 
 
@@ -32,14 +34,4 @@
 	</main><!-- /.o-panel -->
 
 
-
-
-
-<?php
-
-	/**
-	 * Get the footer code
-	 */	
-	get_footer();
-
-?>
+<?php get_footer(); ?>
