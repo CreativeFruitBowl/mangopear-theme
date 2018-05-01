@@ -1,16 +1,16 @@
 <?php
-	
-	/**
-	 * Get the header code
-	 */
-	
-	get_header();
-
 
 	/**
-	 * Output page title
+	 * Core template: [Archive] All post types
 	 *
-	 * @see /themes/mangopear/functions/source/mangopear/mangopear.output.page-title.php
+	 * @category 	Templates
+	 * @package  	mangopear
+	 * @author  	Andi North <andi@mangopear.co.uk>
+	 * @copyright  	2018 Mangopear creative
+	 * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+	 * @version  	4.0.0
+	 * @link 		https://mangopear.co.uk/
+	 * @since   	2.0.0
 	 */
 	
 	mangopear_output_page_title($show_title = true, $show_breadcrumb = true);
@@ -41,6 +41,7 @@
 
 						<ul class="grid  posts-list">
 							<?php while (have_posts()) : the_post(); ?> 
+	get_header();
 
 								<li class="post  post--blog">
 									<div class="grid__item  three-quarters  lap--one-whole  palm--one-whole">
@@ -145,11 +146,6 @@
 
 
 
-<?php
 
-	/**
-	 * Get the footer code
-	 */	
-	get_footer();
 
-?>
+<?php get_footer(); ?>
