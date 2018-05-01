@@ -3,15 +3,11 @@
 	/**
 	 * Functions and filters that are specific to the Hildon WordPress theme.
 	 *
-	 * These functions and filters might be extended from functions, classes and filters found within
-	 * /functions/functions.php
-	 *
 	 * @package  	mangopear
 	 * @author  	Andi North <andi@mangopear.co.uk>
-	 * @copyright  	2015 Mangopear creative
+	 * @copyright  	2018 Mangopear creative
 	 * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
-	 * @version  	1.0.0
-	 * @link 		https://mangopear.co.uk/account/clients/mangopear/docs/themes/mangopear/
+	 * @version  	4.0.0
 	 * @since   	1.0.0
 	 */
 
@@ -34,7 +30,7 @@
 	 * [14] Remove height and width attrs from images
 	 * [15]	Add definition for our SVG sprite documents
 	 */
-	
+
 
 	/**
 	 * [1]	Include MangUI Startr functions
@@ -83,10 +79,10 @@
 
 	register_nav_menus(
 		array(
-			'top' 			=> __('[Header] Top menu (Not logged in)', 'mangopear'), // [a]
-			'top-loggedin' 	=> __('[Header] Top menu (Logged in)', 'mangopear'), // [b]
-			'footer-more-1'	=> __('[Footer] Useful links (Part 1)', 'mangopear'), // [c]
-			'footer-more-2'	=> __('[Footer] Useful links (Part 2)', 'mangopear'), // [d]
+			'top' 			=> __('[Header] Top menu (Not logged in)', 'mangopear'), 		// [a]
+			'top-loggedin' 	=> __('[Header] Top menu (Logged in)', 'mangopear'), 			// [b]
+			'footer-more-1'	=> __('[Footer] Useful links (Part 1)', 'mangopear'), 			// [c]
+			'footer-more-2'	=> __('[Footer] Useful links (Part 2)', 'mangopear'), 			// [d]
 		)
 	);
 
@@ -149,10 +145,9 @@
 	/**
 	 * [6]	Dequeue SearchWP default styles
 	 */
-	
-	
+
 	add_action('wp_print_styles', 'my_remove_searchwp_live_search_theme_css', 99999);
-	
+
 
 	function my_remove_searchwp_live_search_theme_css() {
 		wp_dequeue_style('searchwp-live-search');
@@ -166,7 +161,7 @@
 	/**
 	 * [7]	Post formats
 	 */
-	
+
 	add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
 
 
@@ -176,7 +171,6 @@
 	/**
 	 * [9]	Remove emoji support
 	 */
-	
 
 	remove_action('wp_head', 'print_emoji_detection_script', 7);
 	remove_action('wp_print_styles', 'print_emoji_styles');
@@ -188,7 +182,6 @@
 	/**
 	 * [10]	Remove jQuery migrate
 	 */
-	
 
 	add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
 
@@ -239,7 +232,7 @@
 	/**
 	 * [13] Mangopear breadcrumb fix...
 	 */
-	
+
 	function mangopear_breadcrumbs() {
 		mangui_startr_breadcrumbs();
 	}
@@ -251,7 +244,7 @@
 	/**
 	 * [14] Remove height and width attrs from images
 	 */
-	
+
 	add_filter('post_thumbnail_html', 'remove_width_attribute', 10);
 	add_filter('image_send_to_editor', 'remove_width_attribute', 10);
 
@@ -276,5 +269,5 @@
 	 *
 	 * 		[a]	Global, generic, sprite
 	 */
-	
+
 	define('MANGOPEAR_SPRITE', get_site_url() . '/sprites/mangopear-icons.svg');				// [a]
