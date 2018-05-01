@@ -12,7 +12,6 @@
 	 * @link 		https://mangopear.co.uk/
 	 * @since   	2.0.0
 	 */
-	mangopear_output_page_title($show_title = true, $show_breadcrumb = false, $title_content = 'Whoops!');
 
 
 	get_header();
@@ -20,6 +19,11 @@
 ?>
 
 
+	<header class="o-panel  o-panel--title">
+		<div class="o-container">
+			<h1 class="c-page-title">Whoops!</h1>
+		</div>
+	</header>
 
 
 	<main class="o-panel">
