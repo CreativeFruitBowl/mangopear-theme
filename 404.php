@@ -9,7 +9,6 @@
 	 * @copyright  	2018 Mangopear creative
 	 * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
 	 * @version  	4.0.0
-	 * @link 		https://mangopear.co.uk/
 	 * @since   	2.0.0
 	 */
 
