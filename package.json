@@ -1,6 +1,6 @@
 {
-  "name": "mangui-startr",
-  "version": "1.0.0",
+	"name": "mangui",
+	"version": "2.0.0",
 	"dependencies": {},
 	"devDependencies": {
 		"gulp": "~3.9.1",
