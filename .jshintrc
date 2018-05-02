@@ -5,7 +5,6 @@
     "immed": true,
     "newcap": true,
     "esnext": true,
-    "camelcase": true,
     "latedef": true,
     "noarg": true,
     "node": true,
