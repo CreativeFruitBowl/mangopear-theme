@@ -1,5 +1,6 @@
 {
     "bitwise": true,
+    "curly": true,
     "eqeqeq": true,
     "eqnull": true,
     "immed": true,
@@ -11,12 +12,11 @@
     "undef": true,
     "browser": true,
     "trailing": true,
-    "jquery": true,
-    "curly": true,
-    "supernew": true,
     "globals": {
         "Backbone": true,
         "_": true,
         "jQuery": true
     }
+    "supernew": true,
+    "jquery": true,
 }
