@@ -27,11 +27,32 @@
 	 */
 	
 	function mangopear_output_page_title($show_title = true, $show_breadcrumb = true, $title_content = '', $breadcrumb_content = '') { // [1]
-		if (! get_field('header__style') == 'big') :
-			/**
-			 * Output header HTML
-			 */
+		if (get_field('header__style') == 'big') :
+			$colour__bg = get_field('header__background');
+			$gradient__bg = get_field('header__gradient');
 
+
+			echo '<header class="u-clearfix  o-header--portfolio" style="background-color: ' . $colour__bg . '">';
+				echo '<div class="c-portfolio-header__gradient" style="
+							background: ' . $colour__bg . ';
+							background: -webkit-radial-gradient(center,ellipse cover,' . $gradient__bg . ' 0,' . $colour__bg . ' 65%);
+							background: -webkit-radial-gradient(center,ellipse,' . $gradient__bg . ' 0,' . $colour__bg . ' 65%);
+							background: radial-gradient(ellipse at center,' . $gradient__bg . ' 0,' . $colour__bg . ' 65%);
+							filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\'' . $gradient__bg . '\',endColorstr=\'' . $colour__bg . '\',GradientType=1);"></div>';
+
+
+				echo '<div class="c-portfolio-header__content">';
+					echo '<h1 class="c-portfolio-header__title">' . get_field('header__title') . '</h1>';
+					echo '<h2 class="c-portfolio-header__title--sub">' . get_field('header__title__sub-line') . '</h2>';
+					echo '<h3 class="c-portfolio-header__descriptor">' . get_field('header__title__description') . '</h3>';
+				echo '</div>';
+			echo '</header>';
+
+
+
+
+
+		else :
 			echo '<header class="o-panel  o-panel--title">';
 				echo '<div class="o-container">';
 					echo '<h1 class="c-page-title">';
@@ -51,31 +72,6 @@
 						else : mangui_startr_breadcrumbs();
 						endif;
 					endif;
-				echo '</div>';
-			echo '</header>';
-
-
-
-
-
-		else :
-			$colour__bg = get_field('header__background');
-			$gradient__bg = get_field('header__gradient');
-
-
-			echo '<header class="u-clearfix  o-header--portfolio" style="background-color: ' . $colour__bg . '">';
-				echo '<div class="c-portfolio-header__gradient" style="
-							background: ' . $colour__bg . ';
-							background: -webkit-radial-gradient(center,ellipse cover,' . $gradient__bg . ' 0,' . $colour__bg . ' 65%);
-							background: -webkit-radial-gradient(center,ellipse,' . $gradient__bg . ' 0,' . $colour__bg . ' 65%);
-							background: radial-gradient(ellipse at center,' . $gradient__bg . ' 0,' . $colour__bg . ' 65%);
-							filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\'' . $gradient__bg . '\',endColorstr=\'' . $colour__bg . '\',GradientType=1);"></div>';
-
-
-				echo '<div class="c-portfolio-header__content">';
-					echo '<h1 class="c-portfolio-header__title">' . get_field('header__title') . '</h1>';
-					echo '<h2 class="c-portfolio-header__title--sub">' . get_field('header__title__sub-line') . '</h2>';
-					echo '<h3 class="c-portfolio-header__descriptor">' . get_field('header__title__description') . '</h3>';
 				echo '</div>';
 			echo '</header>';
 
