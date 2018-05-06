@@ -3,19 +3,18 @@
 	/**
 	 * Core template: [Archive] Portfolio
 	 *
-	 * @category 	Additional WordPress template files
+	 * @category 	Templates
 	 * @package  	mangopear
 	 * @author  	Andi North <andi@mangopear.co.uk>
-	 * @copyright  	2015 Mangopear creative
+	 * @copyright  	2018 Mangopear creative
 	 * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
-	 * @version  	3.0.0
-	 * @link 		https://mangopear.co.uk/
+	 * @version  	4.0.0
 	 * @since   	2.0.0
 	 */
-	
+
 
 	get_header();
-	
+
 ?>
 
 
