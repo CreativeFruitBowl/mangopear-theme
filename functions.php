@@ -270,3 +270,25 @@
 	 */
 
 	define('MANGOPEAR_SPRITE', get_site_url() . '/sprites/mangopear-icons.svg');				// [a]
+
+
+
+
+
+	/**
+	 * [16]	Registers a new sidebar for account-docs post type
+	 */
+	
+	add_action('widgets_init', 'theme_slug_widgets_init');
+
+	function theme_slug_widgets_init() {
+	    register_sidebar(array(
+	        'name' 			=> __( 'Account Docs', 'theme-slug' ),
+	        'id' 			=> 'account-docs',
+	        'description' 	=> __( 'For client documentation.', 'theme-slug' ),
+	        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>',
+	    ));
+	}
