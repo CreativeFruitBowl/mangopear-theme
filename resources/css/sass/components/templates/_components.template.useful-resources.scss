@@ -1,0 +1,89 @@
+/**
+ * [Component] Useful resources template
+ *
+ * Styling for pagination across the entire multisite install
+ *
+ * @category	Component
+ * @package		mangopear
+ * @author		Andi North <andi@mangopear.co.uk>
+ * @copyright	2018 Mangopear creative
+ * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+ * @since   	4.0.0
+ * @version   	4.0.0
+ */
+
+
+/**
+ * CONTENTS
+ *
+ * [1]	Useful resource rows
+ */
+
+
+/**
+ * [1]	Articles  rows
+ */
+
+.c-resources-row--articles {
+    border-bottom: 5px solid #EEE;
+    @include rempx(padding, 24px 24px 36px);
+}
+
+
+
+
+
+/**
+ * [2]	Useful links rows
+ */
+
+.c-resources-row--links {
+    background: #FFF;
+    border-bottom: 5px solid #EEE;
+    @include rempx(padding, 24px 24px 36px);
+
+
+    .o-flex {
+	    display: flex;
+	    flex-wrap: wrap;
+	    align-items: stretch;
+	    @include rempx(margin, -6px);
+	}
+
+
+		.o-flex__item {
+		    padding: 0;
+		    flex-grow: 1;
+		    flex-basis:  auto;
+		    background: #FAFAFA;
+		    border: 1px solid #DDD;
+		    width: calc(25% - 12px);
+		    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+		    @include rempx(margin, 6px);
+		    @include rempx(min-width, 200px);
+
+
+		    .c-useful-link__wrap,
+		    .o-post {
+		    	height: 100%;
+		    }
+		}
+
+
+		.o-post {
+			@include rempx(padding, 12px 18px);
+		}
+}
+
+
+
+
+
+/**
+ * [3]	Collections
+ */
+
+.c-resources-row--collections {
+    border-bottom: 5px solid #EEE;
+    @include rempx(padding, 24px 24px 48px);
+}
