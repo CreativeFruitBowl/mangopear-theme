@@ -41,15 +41,12 @@
 	/**
 	 * [3]	Show the pagination
 	 */
-
-	echo paginate_links( 
+	
+	the_posts_pagination(
 		array(
-			'base'		=> str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-			'current'	=> max(1, get_query_var('paged')),
-			'total'		=> $wp_query->max_num_pages,
-			'format'	=> '?page=%#%',
-			'type'		=> 'list',
-			'end_size'	=> 3
+			'mid_size'		=> 3,
+			'prev_text'		=> '&laquo; &nbsp;Newer',
+			'next_text'		=> 'Older&nbsp; &raquo;',
 		)
 	);
 

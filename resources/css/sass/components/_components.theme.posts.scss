@@ -110,7 +110,6 @@
 
 
 			.o-post {
-				border-bottom: 1px solid $grey--lighter;
 				@include rempx(padding-top, 12px);
 				@include rempx(padding-bottom, 15px);
 			}
@@ -159,7 +158,6 @@
  */
 
 .o-post--large {
-	border-bottom: 1px solid $grey--lighter;
 	@include rempx(margin-bottom, 20px);
 
 
@@ -178,6 +176,25 @@
 			@include mangui-transition(ease-in-out 350ms all);
 		}
 	}
+
+
+	.o-post__header {
+		position: relative;
+		@include rempx(min-height, 100px);
+	}
+
+
+		.o-post__title {
+			margin: 0;
+			line-height: 1.1;
+			position: absolute;
+			text-shadow: 0 2px 15px rgba(0,0,0,0.8);
+			@include rempx(bottom, 20px);
+			@include rempx(padding, 0 25px);
+		}
+
+
+			.o-post__title-link { color: #FFF; }
 }
 
 
@@ -189,9 +206,7 @@
  */
 
 .o-post--medium {
-	border-bottom: $pod-style--border;
-	@include rempx(padding-top, 12px);
-	@include rempx(margin-bottom, 15px);
+	@include rempx(margin, 0 0 24px);
 
 
 	.o-post__image {

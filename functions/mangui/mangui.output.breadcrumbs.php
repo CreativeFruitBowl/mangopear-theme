@@ -67,17 +67,6 @@
 			
 			if ($term->taxonomy == 'resource__tags') :
 				$links[] = array(
-					'type'		=> 'link',
-					'href'		=> '/resources/',
-					'label'		=> 'Useful resources',
-					'title'		=> 'A collection of useful resources',
-					'a-class'	=> '',
-					'li-class'	=> 'o-nav__item--blog',
-					'target'	=> '',
-				);
-
-
-				$links[] = array(
 					'type'		=> 'end',
 					'label'		=> 'Post tagged in: ' . $term->name,
 					'li-class'	=> 'o-nav__item--no-link',
@@ -302,17 +291,6 @@
 			 */
 			
 			elseif ($post_type == 'resources') :
-				$links[] = array(
-					'type'		=> 'link',
-					'href'		=> '/resources/',
-					'label'		=> 'Useful resources',
-					'title'		=> 'A collection of useful resources',
-					'a-class'	=> '',
-					'li-class'	=> 'o-nav__item--blog',
-					'target'	=> '',
-				);
-
-
 				$links[] = array(
 					'type'		=> 'end',
 					'label'		=> get_the_title(),

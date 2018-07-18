@@ -35,13 +35,13 @@
 
 
 					&::after {
-					    left: 100%;
-					    content: '';
-					    position: absolute;
-					    border-top: 1px solid $grey--lighter;
-					    @include rempx(width, 1000px);
-					    @include rempx(margin-top, 8px);
-					    @include rempx(margin-left, 20px);
+						left: 100%;
+						content: '';
+						position: absolute;
+						border-top: 1px solid $grey--lighter;
+						@include rempx(width, 1000px);
+						@include rempx(margin-top, 8px);
+						@include rempx(margin-left, 20px);
 					}
 				}
 			}
@@ -53,21 +53,70 @@
 
 
 				.o-nav__item {
-				    margin-left: -15px;
+					@include rempx(padding, 5px 25px 0 0);
 				}
 
 
 					.o-nav__link {
-					    font-weight: bold;
-					    padding: 9px 15px 9px;
-					    border-left: 2px solid transparent;
+						font-weight: bold;
+						background: #FFF;
+						border: 1px solid #DDD;
+						border-right: 0;
+						border-radius: 3px 0 0 3px;
+						@include rempx(padding, 5px 10px 5px 20px);
 						@include mangui-font-campton($font-size: 16px);
 						@include mangui-transition(ease-in-out 350ms all);
 
 
-						&:hover {
-						    background: #F5F5F5;
+						&:hover,
+						&:focus,
+						&:active {
+							background: $grey--lighter;
 							border-left-color: $blue--light;
+
+							&::after { background: $grey--lighter; }
+						}
+
+
+						abbr {
+							border-bottom: 0;
+							text-decoration: none;
+						}
+
+
+						&::after {
+							z-index: 9;
+							content: '';
+							background: #FFF;
+							position: absolute;
+							border-radius: 0 0 3px 0;
+							border-right: 1px solid #DDD;
+							border-bottom: 1px solid #DDD;
+							@include rempx(top, 10px);
+							@include rempx(right, 12px);
+							@include rempx(width, 25px);
+							@include rempx(height, 25px);
+							@include mangui-transform(rotate(-45deg));
+							@include mangui-transition(ease-in-out 350ms all);
+						}
+
+
+						&::before {
+							content: '';
+							z-index: 11;
+							position: absolute;
+							border-radius: 6px;
+							border: 1px solid #CCC;
+							@include rempx(left, 9px);
+							@include rempx(top, 20px);
+							@include rempx(width, 6px);
+							@include rempx(height, 6px);
 						}
 					}
+
+
+						.o-nav__text {
+							z-index: 10;
+							position: relative;
+						}
 		}

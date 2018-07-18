@@ -47,7 +47,10 @@
 
 	else :
 		mangopear_panel_cta_default(); 												// Default call to action panel
-		mangopear_panel_portfolio($location = 'footer', $title = 'Our work'); 		// Default portfolio panel
+		
+		if (is_main_site()) :
+			mangopear_panel_portfolio($location = 'footer', $title = 'Our work'); 		// Default portfolio panel
+		endif;
 
 
 	endif;
