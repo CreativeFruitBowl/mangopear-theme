@@ -30,6 +30,7 @@
 		if (get_field('header__style') == 'big') :
 			$colour__bg = get_field('header__background');
 			$gradient__bg = get_field('header__gradient');
+			$text_colour = get_field('header__text-colour') ? get_field('header__text-colour') : '#FFF';
 
 
 			echo '<header class="u-clearfix  o-header--portfolio" style="background-color: ' . $colour__bg . '">';
@@ -41,7 +42,7 @@
 							filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=\'' . $gradient__bg . '\',endColorstr=\'' . $colour__bg . '\',GradientType=1);"></div>';
 
 
-				echo '<div class="c-portfolio-header__content">';
+				echo '<div class="c-portfolio-header__content" style="color: ' . $text_colour . '">';
 					echo '<h1 class="c-portfolio-header__title">' . get_field('header__title') . '</h1>';
 					echo '<h2 class="c-portfolio-header__title--sub">' . get_field('header__title__sub-line') . '</h2>';
 					echo '<h3 class="c-portfolio-header__descriptor">' . get_field('header__title__description') . '</h3>';
