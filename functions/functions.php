@@ -138,3 +138,13 @@
 	require_once get_template_directory() . '/functions/theme/components/component.aside.portfolio.visit-website.default-usage.php';
 	require_once get_template_directory() . '/functions/theme/components/component.aside.what-we-do.navigation.php';
 	require_once get_template_directory() . '/functions/theme/components/component.social-icons.php';
+
+
+
+
+
+	/**
+	 * [8]	Includes
+	 */
+	
+	require_once get_template_directory() . '/includes/mangopear.the-row.portfolio.php';
