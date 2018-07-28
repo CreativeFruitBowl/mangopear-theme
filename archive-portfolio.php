@@ -37,5 +37,39 @@
 	</header>
 
 
-	<?php mangopear_panel_portfolio($location = 'archive-portfolio', $title = false); ?>
+
+
+	<main class="o-panel  o-panel--gutterless" id="main">
+		<?php
+
+			/**
+			 * Loop through CMS fields
+			 */
+
+			if (have_rows('work-row', 'option')) :
+				while (have_rows('work-row', 'option')) : the_row();
+					mangopear__the_portfolio_row(
+						array(
+							'title'					=> get_sub_field('title'),
+							'colour--background'	=> get_sub_field('colour--background'),
+							'colour--text'			=> get_sub_field('colour--text'),
+							'items'					=> get_sub_field('items'),
+						)
+					);
+				endwhile;
+
+
+			else :
+				mangopear_panel_portfolio($location = 'archive-portfolio', $title = false);
+
+				
+			endif;
+
+		?>
+	</main>
+
+
+
+
+
 <?php get_footer(); ?>
