@@ -43,7 +43,7 @@
 	.c-portfolio-header__title,
 	.c-portfolio-header__title--sub,
 	.c-portfolio-header__descriptor {
-		color: #FFF;
+		color: inherit;
 	}
 
 
@@ -72,7 +72,7 @@
 		position: absolute;
 		letter-spacing: .35em;
 		text-transform: uppercase;
-		border-bottom: 1px solid rgba(255,255,255,.5);
+		border-bottom: 1px solid currentColor;
 		@include rempx(padding, 0 0 25px);
 		@include rempx(font-size, 14px);
 		@include rempx(max-width, 550px);

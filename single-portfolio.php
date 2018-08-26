@@ -135,8 +135,8 @@
 								<?php $slide_image = get_sub_field('image'); ?>
 								<?php $slide_image_mobile = get_sub_field('image--mobile'); ?>
 								
-								<img src="<?php echo $slide_image['url']; ?>" class="u-portable--hide">
-								<img src="<?php echo $slide_image_mobile['url']; ?>" class="u-desk--hide">
+								<img src="<?php echo $slide_image['url']; ?>" class="u-portable--hide" alt="<?php echo $slide_image['alt']; ?>">
+								<img src="<?php echo $slide_image_mobile['url']; ?>" class="u-desk--hide" alt="<?php echo $slide_image_mobile['alt']; ?>">
 							</div><!-- /.o-grid__item -->
 
 

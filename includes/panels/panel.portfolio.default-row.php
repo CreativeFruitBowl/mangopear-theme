@@ -90,7 +90,7 @@ if (! function_exists('mangopear_panel__portfolio__default')) :
 
 
 						<img class="o-block__media__asset" 
-						     alt="<?php $args['imaage']['title']; ?>" 
+						     alt="<?php $args['imaage--second']['title']; ?>" 
 						     src="data:image/gulpif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
 						     data-src="<?php echo $args['image--second']['url']; ?>">
 

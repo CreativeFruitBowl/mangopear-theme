@@ -53,6 +53,11 @@
 			@include rempx(margin, -60px -40px 60px);
 			@include mangui-breakpoint(palm) { @include rempx(margin, -60px -20px 60px) }
 		}
+
+
+		+ .o-block__content {
+			@include rempx(margin-top, -50px);
+		}
 	}
 
 
