@@ -52,9 +52,9 @@
 		<link rel="apple-touch-icon" sizes="152x152"  href="<?php echo get_template_directory_uri(); ?>/resources/images/favicon/apple-touch-icon-152x152.png">
 		<meta name="apple-mobile-web-app-title"      content="Mangopear creative - Design. Development. Consultancy.">
 		<meta name="application-name"                content="Mangopear creative - Design. Development. Consultancy.">
-		<meta name="msapplication-TileColor"         content="#129da9">
+		<meta name="msapplication-TileColor"         content="<?php echo BROWSER_TAB_COLOUR; ?>">
 		<meta name="msapplication-TileImage"         content="<?php echo get_template_directory_uri(); ?>/resources/images/favicon/apple-touch-icon-144x144.png">
-		<meta name="theme-color"                     content="#129da9">
+		<meta name="theme-color"                     content="<?php echo BROWSER_TAB_COLOUR; ?>">
 		
 
 		<?php wp_head(); ?>
@@ -181,10 +181,7 @@
 
 
 
-			<a href="<?php echo get_site_url(); ?>" class="c-main-header__button  c-main-header__button--left  o-button  o-button--just-icon  c-main-header__cell  c-main-header__cell--left">
-				<svg class="o-icon  o-icon--logo" height="35" width="35" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#mangopear"/></svg>
-				<span class="u-invisible">Mangopear creative</span>
-			</a>
+			<?php get_template_part('template-partials/logo'); ?>
 
 
 
@@ -192,8 +189,8 @@
 
 			<form role="search" method="get" action="<?php bloginfo('url');?>" class="c-search__form  c-main-header__cell  c-main-header__cell--center">
 				<input type="hidden" value="Search">
-				<label for="s" class="u-hide">Search this website</label>
-				<input type="text" name="s" value="" class="c-search__input" placeholder="Search this website" data-swplive="true">
+				<label for="s" class="u-hide"><?php echo SEARCH_BAR_STRING; ?></label>
+				<input type="text" name="s" value="" class="c-search__input" placeholder="<?php echo SEARCH_BAR_STRING; ?>" data-swplive="true">
 
 				<button class="c-search__submit  o-button">
 					<svg class="o-icon--search" height="32" width="32" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#search"/></svg>

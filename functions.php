@@ -29,6 +29,7 @@
 	 * [13] Mangopear breadcrumb fix...
 	 * [14] Remove height and width attrs from images
 	 * [15]	Add definition for our SVG sprite documents
+	 * [17]	Define search bar string
 	 */
 
 
@@ -292,3 +293,16 @@
 			'after_title'   => '</h2>',
 	    ));
 	}
+
+
+
+
+
+	/**
+	 * [17]	Define search bar string
+	 *
+	 * 		@since  4.0.0 [<description>]
+	 */
+	
+	define(SEARCH_BAR_STRING, 'Search this website');
+	define(BROWSER_TAB_COLOUR, '#129DA9');

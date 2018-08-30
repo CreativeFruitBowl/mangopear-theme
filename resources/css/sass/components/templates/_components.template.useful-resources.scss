@@ -95,7 +95,7 @@
 
 
 		.o-post__title, .o-post__title-link { color: inherit; }
-		.o-post__excerpt, .o-post__read-time { color: $grey--medium; }
+		.o-post__excerpt, .o-post__read-time, .o-post__operating-days { color: $grey--medium; }
 		.o-post__from { font-weight: bold; }
 		.o-post__excerpt p { margin: 0; }
 
@@ -114,16 +114,36 @@
 		}
 
 
+			.o-post__title__sub {
+				display: block;
+				color: $grey--dark;
+				@include rempx(font-size, 16px);
+				@include rempx(padding, 5px 0 0);
+				@include mangui-transition(ease-in-out 350ms color);
+			}
+
+
 		.o-post__image {
 			max-width: calc(100% + 48px);
 			max-width: calc(100% + 3rem);
 			@include rempx(margin, -23px -24px 19px);
 		}
+
+
+		.o-post__foot-item {
+			margin: 0;
+			@include rempx(font-size, 12px);
+			@include mangui-transition(ease-in-out 350ms color);
+		}
 	}
 
 
-	.c-resources__links .o-posts__item:hover .o-post__title-link {
-		color: $blue--light;
+	.c-resources__links .o-posts__item:hover {
+		.o-post__title-link,
+		.o-post__title__sub,
+		.o-post__foot-item {
+			color: $blue--light;
+		}
 	}
 
 
