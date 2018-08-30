@@ -115,6 +115,7 @@
 
 			.o-post__title__sub {
 				display: block;
+				font-weight: 500;
 				color: $grey--dark;
 				@include rempx(font-size, 16px);
 				@include rempx(padding, 5px 0 0);
