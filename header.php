@@ -52,9 +52,9 @@
 		<link rel="apple-touch-icon" sizes="152x152"  href="<?php echo get_template_directory_uri(); ?>/resources/images/favicon/apple-touch-icon-152x152.png">
 		<meta name="apple-mobile-web-app-title"      content="Mangopear creative - Design. Development. Consultancy.">
 		<meta name="application-name"                content="Mangopear creative - Design. Development. Consultancy.">
-		<meta name="msapplication-TileColor"         content="#129da9">
+		<meta name="msapplication-TileColor"         content="<?php echo BROWSER_TAB_COLOUR; ?>">
 		<meta name="msapplication-TileImage"         content="<?php echo get_template_directory_uri(); ?>/resources/images/favicon/apple-touch-icon-144x144.png">
-		<meta name="theme-color"                     content="#129da9">
+		<meta name="theme-color"                     content="<?php echo BROWSER_TAB_COLOUR; ?>">
 		
 
 		<?php wp_head(); ?>

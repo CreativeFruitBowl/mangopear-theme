@@ -305,3 +305,4 @@
 	 */
 	
 	define(SEARCH_BAR_STRING, 'Search this website');
+	define(BROWSER_TAB_COLOUR, '#129DA9');
