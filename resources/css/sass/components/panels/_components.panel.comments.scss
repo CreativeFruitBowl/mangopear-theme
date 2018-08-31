@@ -73,8 +73,14 @@
 		overflow: hidden;
 		border: 5px solid $grey--lighter;
 		@include rempx(margin, 37px 0 9px);
-		@include rempx(max-height, 1000px);
-		@include mangui-transition(ease-in-out 750ms max-height);
+		@include rempx(max-height, 2000px);
+		@include mangui-transition(ease-in-out 1.5s max-height);
+
+		@include mangui-breakpoint("max-width: 1000px") {
+			border-left: 0;
+			border-right: 0;
+			@include rempx(margin, 37px -24px 9px);
+		}
 
 
 		&.is-hidden {
@@ -83,7 +89,8 @@
 
 
 		.comment-respond {
-			@include rempx(padding, 10px 50px 40px);
+			@include rempx(padding, 10px 24px 36px);
+			@include mangui-breakpoint("min-width: 1001px") { @include rempx(padding, 10px 50px 40px); }
 		}
 	}
 
@@ -124,13 +131,20 @@
 		 */
 		
 		.c-comments__form {
-			.o-form__field--inline { display: flex; }
-				.o-form__field--inline .o-form__input, .acf-comment-fields .acf-input { width: 70%; }
-				.o-form__field--inline .o-form__label, .acf-comment-fields .acf-label { width: 30%; }
+			@include mangui-breakpoint("min-width: 1001px") {
+				.o-form__field--inline { display: flex; }
+					.o-form__field--inline .o-form__input, .acf-comment-fields .acf-input { width: 70%; }
+					.o-form__field--inline .o-form__label, .acf-comment-fields .acf-label { width: 30%; }
+			}
 
 
 			.o-form__input {
 				width: 100%;
+			}
+
+
+			.o-form__label {
+				@include mangui-breakpoint("max-width: 1000px") { padding-bottom: 0; }
 			}
 
 
@@ -143,16 +157,10 @@
 				}
 
 
-					.acf-label {
-						display: inline-block;
-						@include rempx(margin, 10px 0 0);
-					}
-
-
 					.acf-field {
 						margin: 0;
-						display: flex;
 						align-content: center;
+						@include mangui-breakpoint("min-width: 1001px") { display: flex; }
 
 
 						.acf-input {
@@ -164,6 +172,13 @@
 								@include rempx(top, -2px);
 								@include rempx(margin-left, 15px);
 							}
+						}
+
+
+						.acf-label {
+							display: inline-block;
+							@include rempx(margin, 10px 0 0);
+							@include mangui-breakpoint("max-width: 1000px") { width: 100%; }
 						}
 
 
@@ -190,6 +205,7 @@
 
 			.o-form__submit {
 				margin-top: 1em;
+				@include mangui-breakpoint("max-width: 1000px") { margin-left: 0; }
 			}
 		}
 
