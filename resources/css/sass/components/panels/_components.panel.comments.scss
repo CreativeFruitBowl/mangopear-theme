@@ -183,3 +183,21 @@
 				margin-top: 1em;
 			}
 		}
+
+
+
+
+
+	/**
+	 * [6]	Comments > No comments
+	 */
+	
+	.c-comments__comments--empty {
+		color: $grey--dark;
+		background: $grey--lighter;
+		border: 1px solid $grey--light;
+		@include rempx(margin, 40px 0 8px);
+		@include rempx(padding, 20px 40px);
+
+		p { margin: 0; }
+	}
