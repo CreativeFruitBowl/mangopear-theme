@@ -1,5 +1,23 @@
 <?php
 
+	/**
+	 * Partial: Comments component, including comment form
+	 *
+	 * @category 	Additional WordPress template files
+	 * @package  	scenic
+	 * @author  	Andi North <andi@mangopear.co.uk>
+	 * @copyright  	2017 Mangopear creative
+	 * @license   	GNU General Public License <http://opensource.org/licenses/gpl-license.php>
+	 * @link 		https://mangopear.co.uk/
+	 * @version  	3.0.0
+	 * @since   	3.0.0
+	 */
+	
+
+	/**
+	 * Security protections, including password protection
+	 */
+	
 	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) :
 		die('You can\'t access this file directly. You naughty little thing, you!');
 
@@ -11,7 +29,7 @@
 			endif;
 		endif;
 	endif;
-
+	
 ?>
 
 
