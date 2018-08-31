@@ -79,4 +79,32 @@ jQuery(document).ready(function($){
 	setTimeout(function(){
 		$('.js-main-header').removeClass('has-animation');
 	}, 100);
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * [4]	Expose the comment form
+	 *
+	 * 		@since  4.0.0
+	 */
+	
+	$('.js-comments__reveal-form').on('click', function(){
+		var commentsForm = $('.js-comments__reveal-form');
+
+
+		if (commentsForm.hasClass('is-hidden')) {
+			$(commentsForm).removeClass('is-hidden');
+		} else {
+			$(commentsForm).addClass('is-hidden');
+		}
+	});
+
 });
