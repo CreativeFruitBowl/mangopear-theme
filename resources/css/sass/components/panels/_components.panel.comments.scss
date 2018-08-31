@@ -44,6 +44,7 @@
 	
 	.c-comments__header {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
 	}
@@ -52,6 +53,12 @@
 		.c-comments__header__title {
 			margin: 0;
 			@include rempx(font-size, 40px);
+			@include rempx(min-width, 300px);
+		}
+
+
+		.c-comments__header__action {
+			@include rempx(min-width, 214px);
 		}
 
 
@@ -227,25 +234,33 @@
 			.c-comments__item {
 				margin: 0;
 				@include rempx(padding, 0 0 20px);
+				@include mangui-breakpoint("max-width: 800px") { @include rempx(padding-bottom, 40px); }
 			}
 
 
 				.c-comments__comment {
 					display: flex;
+					flex-wrap: wrap;
 					align-items: start;
 				}
 
 
 					.c-comments__comment__content {
-						width: 100%;
 						background: #FFF;
+						width: calc(100% - 13.75rem);
 						@include rempx(padding, 5px 40px);
+
+						@include mangui-breakpoint("max-width: 800px") {
+							width: 100%;
+							@include rempx(padding, 1px 20px);
+						}
 					}
 
 
 					.c-comments__comment__footer {
-						@include rempx(min-width, 200px);
 						@include rempx(margin-left, 20px);
+						@include mangui-breakpoint("min-width: 801px") { @include rempx(width, 200px); }
+						@include mangui-breakpoint("max-width: 800px") { @include rempx(margin, 20px 0 0); }
 
 
 						.avatar {
@@ -255,8 +270,23 @@
 					}
 
 
-						.c-comments__comment__author__avatar:empty ~ .c-comments__comment__author__name {
-							@include rempx(margin, 25px 0 0);
+						.c-comments__comment__author {
+							@include mangui-breakpoint("max-width: 800px") {
+								display: flex;
+								align-items: center;
+							}
+						}
+
+
+						.c-comments__comment__author__avatar {
+							&:not(:empty) {
+								@include rempx(min-width, 96px);
+								@include rempx(margin-right, 20px);
+							}
+
+							&:empty ~ .c-comments__comment__author__name {
+								@include mangui-breakpoint("min-width: 801px") { @include rempx(margin, 25px 0 0); }
+							}
 						}
 
 
@@ -266,8 +296,9 @@
 
 
 						.c-comments__comment__author__name {
+							margin: 0;
 							line-height: 1.4;
-							@include rempx(margin, 11px 0 0);
+							@include mangui-breakpoint("min-width: 801px") { @include rempx(margin, 11px 0 0); }
 						}
 
 
