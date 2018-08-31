@@ -1,0 +1,26 @@
+/**
+ * Footer content slots
+ */
+
+.o-content-slot--scenic-sign-up {
+	position: relative;
+	background: url(../../images/content-slots/Are-you-an-operator-with-a-scenic-bus-route.jpg) top center no-repeat;
+	@include rempx(height, 522px);
+	@include rempx(max-width, 368px);
+	@include rempx(margin, 5px auto 0);
+	@include mangui-transition(ease-in-out 350ms all);
+
+
+	&:hover {
+		opacity: 0.85;
+	}
+
+
+	.o-content-slot__block-link {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+	}
+}
