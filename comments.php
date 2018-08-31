@@ -36,13 +36,22 @@
 	<section class="o-panel  o-panel--comments">
 		<div class="o-container">
 			<header class="c-comments__header">
-				<h2 class="c-comments__header__title"><?php _e('Reviews', 'scenic-buses'); ?></h2>
+				<h2 class="c-comments__header__title"><?php comments_number('No comments', '1 comment', '% comments'); ?></h2>
 
 
-				<button class="o-button  o-button--primary  o-button--positive  c-comments__header__action  js-comments__action--reveal-form">
-					<svg class="o-button__icon  o-button__icon--left" height="24" width="24" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#add"/></svg>
-					<span class="o-button__text">Add a review</span>
-				</button>
+				<?php if ($post->comment_status == 'open') : ?>
+					<?php if (get_option('comment_registration') && ! $user_ID) : ?>
+						<a href="<?php echo wp_login_url(get_permalink()); ?>" class="o-button  o-button--primary  o-button--positive  c-comments__header__action">
+							<svg class="o-button__icon  o-button__icon--left" height="24" width="24" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#add"/></svg>
+							<span class="o-button__text">Add a comment</span>
+						</a>
+					<?php else : ?>
+						<button class="o-button  o-button--primary  o-button--positive  c-comments__header__action  js-comments__action--reveal-form">
+							<svg class="o-button__icon  o-button__icon--left" height="24" width="24" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#add"/></svg>
+							<span class="o-button__text">Add a comment</span>
+						</button>
+					<?php endif; ?>
+				<?php endif; ?>
 			</header>
 
 
@@ -52,10 +61,6 @@
 			<section class="c-comments__form-wrap  js-comments__reveal-form  is-hidden">
 				<?php
 
-					/**
-					 * Output comments form
-					 */
-					
 					$comment_form__args = array(
 						'fields'				=> 	array(
 														'author'	=>	'<div class="o-form__field  o-form__field--inline  o-form__field--name">' .
@@ -94,92 +99,76 @@
 
 				?>
 			</section>
-		</div><!-- /.o-container -->
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-		<div class="o-container  o-container--comments">
-				<h3 class="c-comments__title  c-comments__title--replies">
-					<?php comments_number('No replies', '1 reply &raquo;', '% replies &raquo;' ); ?>
-				</h3>
-					
-
-				<?php if ($comments) : ?>
-					<ul class="c-comments__list">
-						<?php foreach ($comments as $comment) : ?>
-							<li class="c-comments__item" id="comment-<?php comment_ID(); ?>">
-								<header class="c-comment__head  u-clearfix">
-									<?php echo get_avatar($comment, '96'); ?>
-									<h4 class="c-comment__title"><?php comment_author_link() ?></h4>
-									
-									<a href="#comment-<?php comment_ID() ?>" class="c-comment__date-link" title="Link directly to this comment">
-										<time datetime="" class="c-comment__date"><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></time>
-									</a>
-
-									<?php edit_comment_link('Edit this comment','',''); ?>
-								</header>
-
-
-								<article class="c-comment__content">
-									<?php if ($comment->comment_approved == '0') : ?>
-										<p>Your comment is awaiting moderation.</p>
-									<?php else : ?>
-										<?php comment_text(); ?>
-									<?php endif; ?>
-								</article>
-							</li>
-						<?php endforeach; ?>
-					</ul><!-- /.c-comments -->
+			<?php if (! $comments) : ?>
+				<?php if ($post->comment_status == 'open') : ?>
+					<section class="c-comments__comments  c-comments__comments--empty">
+						<div class="c-comments__state-message">
+							<p>
+								<strong>Start the conversation.</strong>
+								<br>Be the first to comment.
+							</p>
+						</div>
+					</section>
 
 
 				<?php else : ?>
-					<div class="c-comments__none">
-						<?php if ($post->comment_status == 'open') : ?>
-							<p class="c-comments__error  c-comments__error--open"><strong><?php _e('Start the conversation', 'mangopear'); ?> - <em><?php _e('be the first to comment.', 'mangopear'); ?></em></strong></p>
-						<?php else : ?>
-							<p class="c-comments__error  c-comments__error--closed"><strong><?php _e('Comments are closed.', 'mangopear'); ?></strong></p>
-						<?php endif; ?>
-					</div><!-- /.c-comments__none -->
+					<section class="c-comments__comments  c-comments__comments--empty">
+						<div class="c-comments__state-message">
+							<p>
+								<strong>Comments are closed.</strong>
+								<br>You will not be able to post a comment.
+							</p>
+						</div>
+					</section>
 				<?php endif; ?>
 
 
 
 
 
-				<?php if ($post->comment_status == 'open') : ?>
-					<div class="c-comments__form-wrapper">
-						<h3 class="c-comments__title  c-comments__title--leave-reply" id="comment-now">Leave your reply</h3>
+			<?php else : ?>
+				<section class="c-comments__comments">
+					<ul class="c-comments__list">
+						<?php foreach ($comments as $comment) : ?>
+							<li class="c-comments__item" id="comment-<?php comment_ID(); ?>">
+								<article class="c-comments__comment">
+									<div class="c-comments__comment__content">
+										<?php
+
+											if ($comment->comment_approved == '0') : echo '<p>Your comment is awaiting moderation.</p>';
+											else                                   : comment_text();
+											endif;
+
+										?>
+									</div>
 
 
-						<?php if (get_option('comment_registration') && ! $user_ID) : ?>
-							<div>
-								<p>You must be logged in to comment on this article.</p>
-
-								<a href="/account/?redirect_to=<?php echo urlencode(get_permalink()); ?>" class="o-button  o-button--secondary  o-panel__button">
-									<span class="o-button__text">Log in now</span>
-									<svg class="o-button__icon--right  o-icon--chevron-right" viewBox="0 0 36 36" width="24" height="24"><rect fill="currentColor" y="16.5" width="31.3" height="3"></rect><polygon fill="currentColor" points="19.2,31.9 17.3,29.6 31.3,18 17.3,6.4 19.2,4.1 36,18 "></polygon></svg>
-								</a>
-							</div>
+									<footer class="c-comments__comment__footer">
+										<div class="c-comments__comment__author">
+											<div class="c-comments__comment__author__avatar"><?php echo get_avatar($comment, '96'); ?></div>
 
 
-						<?php else : ?>
-						<?php endif; ?>
-					</div><!-- /.c-comments__form-wrapper -->
-				<?php endif; ?>
-			</div><!-- /.o-container -->
+											<p class="c-comments__comment__author__name">
+												<span class="c-comments__comment__author__name-link"><?php comment_author_link() ?></span>
+												<br>
+												<a href="#comment-<?php comment_ID() ?>" class="c-comments__comment__date" title="Link directly to this comment">
+													<time datetime="" class="c-comment__date"><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></time>
+												</a>
+											</p>
+										</div>
+									</footer>
+								</article>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</section>
+
+
+			<?php endif; ?>
 		</div><!-- /.o-container -->
-	</section><!-- /.c-portfolio-form -->
+	</section>
