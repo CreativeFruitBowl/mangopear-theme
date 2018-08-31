@@ -96,7 +96,7 @@ jQuery(document).ready(function($){
 	 * 		@since  4.0.0
 	 */
 	
-	$('.js-comments__reveal-form').on('click', function(){
+	$('.js-comments__action--reveal-form').on('click', function(){
 		var commentsForm = $('.js-comments__reveal-form');
 
 
