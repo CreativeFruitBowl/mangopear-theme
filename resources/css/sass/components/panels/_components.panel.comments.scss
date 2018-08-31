@@ -20,6 +20,7 @@
  * [4]	Comments > Form > Order
  * [5]	Comments > Form > Fields
  * [6]	Comments > No comments
+ * [7]	Comments > List of comments
  */
 
 
@@ -202,3 +203,74 @@
 
 		p { margin: 0; }
 	}
+
+
+
+
+
+	/**
+	 * [7]	Comments > List of comments
+	 */
+	
+	.c-comments__comments {
+		@include rempx(margin, 40px 0 0);
+	}
+
+
+		.c-comments__list {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+
+			.c-comments__item {
+				margin: 0;
+				@include rempx(padding, 0 0 20px);
+			}
+
+
+				.c-comments__comment {
+					display: flex;
+					align-items: start;
+				}
+
+
+					.c-comments__comment__content {
+						width: 100%;
+						background: #FFF;
+						@include rempx(padding, 5px 40px);
+					}
+
+
+					.c-comments__comment__footer {
+						@include rempx(min-width, 200px);
+						@include rempx(margin-left, 20px);
+
+
+						.avatar {
+							border-radius: 4px;
+							box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+						}
+					}
+
+
+						.c-comments__comment__author__avatar:empty ~ .c-comments__comment__author__name {
+							@include rempx(margin, 25px 0 0);
+						}
+
+
+						.c-comments__comment__date {
+							@include rempx(font-size, 13px);
+						}
+
+
+						.c-comments__comment__author__name {
+							line-height: 1.4;
+							@include rempx(margin, 11px 0 0);
+						}
+
+
+							.c-comments__comment__author__name-link {
+								font-weight: bold;
+							}
