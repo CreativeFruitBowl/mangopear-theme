@@ -33,30 +33,36 @@
 ?>
 
 
-
-
-
-	<section class="o-panel  o-panel--comments  c-comments">
+	<section class="o-panel  o-panel--comments">
 		<div class="o-container">
-			<h2 class="o-panel__heading  c-panel__heading--portfolio"><?php _e('Join the discussion', 'mangopear'); ?></h2>
-			
+			<header class="c-comments__header">
+				<h2 class="c-comments__header__title"><?php _e('Reviews', 'scenic-buses'); ?></h2>
 
-			<div class="o-container  o-container--optimise-readability  c-portfolio-form__content">
-				<p class="c-lede"><?php _e('Share your thoughts below to be part of the conversation.', 'mangopear'); ?></p>
 
-				<div class="o-panel__button-wrapper">
-					<a href="#comment-now" class="o-button  o-button--secondary  o-panel__button">
-						<span class="o-button__text">Join the conversation</span>
-						<svg class="o-button__icon--right  o-icon--chevron-right" viewBox="0 0 36 36" width="24" height="24"><rect fill="currentColor" y="16.5" width="31.3" height="3"></rect><polygon fill="currentColor" points="19.2,31.9 17.3,29.6 31.3,18 17.3,6.4 19.2,4.1 36,18 "></polygon></svg>
-					</a>
-				</div><!-- /.o-panel__button-wrapper -->
-			</div><!-- /.o-container -->
+				<button class="o-button  o-button--primary  o-button--positive  c-comments__header__action  js-comments__reveal-form">
+					<svg class="o-button__icon  o-button__icon--left" height="24" width="24" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#add"/></svg>
+					<span class="o-button__text">Add a review</span>
+				</button>
+			</header>
+		</div><!-- /.o-container -->
 
 
 
 
 
-			<div class="o-container  o-container--comments">
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="o-container  o-container--comments">
 				<h3 class="c-comments__title  c-comments__title--replies">
 					<?php comments_number('No replies', '1 reply &raquo;', '% replies &raquo;' ); ?>
 				</h3>
