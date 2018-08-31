@@ -39,7 +39,7 @@
 				<h2 class="c-comments__header__title"><?php _e('Reviews', 'scenic-buses'); ?></h2>
 
 
-				<button class="o-button  o-button--primary  o-button--positive  c-comments__header__action  js-comments__reveal-form">
+				<button class="o-button  o-button--primary  o-button--positive  c-comments__header__action  js-comments__action--reveal-form">
 					<svg class="o-button__icon  o-button__icon--left" height="24" width="24" role="presentation"><use xlink:href="<?php echo MANGOPEAR_SPRITE; ?>#add"/></svg>
 					<span class="o-button__text">Add a review</span>
 				</button>
