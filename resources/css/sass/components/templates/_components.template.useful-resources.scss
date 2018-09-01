@@ -123,7 +123,9 @@
 			}
 
 
-		.o-post__image {
+		.o-post__image.o-post__image {
+			width: calc(100% + 48px);
+			width: calc(100% + 3rem);
 			max-width: calc(100% + 48px);
 			max-width: calc(100% + 3rem);
 			@include rempx(margin, -23px -24px 19px);
