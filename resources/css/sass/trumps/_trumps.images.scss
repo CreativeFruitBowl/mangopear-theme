@@ -15,3 +15,15 @@
 		@include rempx(margin-bottom, 30px);
 	}
 }
+
+
+
+
+
+/**
+ * Photoswipe
+ */
+
+.pswp {
+	z-index: 150000 !important;
+}
