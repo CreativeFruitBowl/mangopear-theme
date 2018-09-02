@@ -189,7 +189,7 @@
 			}
 
 
-			+ .c-search__submit { 
+			~ .c-search__submit { 
 				color: rgba(255,255,255,.6);
 				@include mangui-transition(ease-in-out 350ms all); 
 			}
@@ -200,7 +200,7 @@
 				box-shadow: 0 1px 4px rgba(0,0,0,0), 0 5px 10px rgba(0,0,0,0);
 				
 				@include mangui-placeholder() { color: #FFF; }
-				+ .c-search__submit { color: #FFF; }
+				~ .c-search__submit { color: #FFF; }
 			}
 
 
@@ -211,7 +211,7 @@
 				box-shadow: 0 1px 4px rgba(0,0,0,0), 0 5px 10px rgba(0,0,0,0.3);
 				
 				@include mangui-placeholder() { color: $grey--medium; }
-				+ .c-search__submit { color: $blue--medium; }
+				~ .c-search__submit { color: $blue--medium; }
 			}
 
 
