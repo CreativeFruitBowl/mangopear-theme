@@ -13,9 +13,11 @@
 	 * @since   	1.0.0
 	 */
 	
-	function mangopear_redirect_if_not_logged_in() {
-		if (!is_user_logged_in()) {
-			$redirect_url = urlencode(get_site_url() . $_SERVER[REQUEST_URI]);
-			wp_redirect('/account/?redirect_to=' . $redirect_url, $status = 302);
+	if (! function_exists('mangopear_redirect_if_not_logged_in')) :
+		function mangopear_redirect_if_not_logged_in() {
+			if (!is_user_logged_in()) {
+				$redirect_url = urlencode(get_site_url() . $_SERVER[REQUEST_URI]);
+				wp_redirect('/account/?redirect_to=' . $redirect_url, $status = 302);
+			}
 		}
-	}
+	endif;
